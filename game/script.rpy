@@ -1,7 +1,7 @@
 ﻿# Вы можете расположить сценарий своей игры в этом файле.
 
 # Определение персонажей игры.
-define e = Character('Эйлин', color="#c8ffc8")
+define ps = Character('Пасхалко', color="#C0E7D6")
 
 # Вместо использования оператора image можете просто
 # складывать все ваши файлы изображений в папку images.
@@ -13,10 +13,12 @@ label start:
 
     scene bg room
 
-    show eileen happy
+    show paschalko
 
-    e "убубубу агу агу"
+    ps "мяу мяу"
 
-    e "commit renpy test"
+    ps "гав гав"
+
+    ps "уау уау"
 
     return
