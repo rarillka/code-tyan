@@ -11,7 +11,7 @@ define ps = Character('Пасхалко', color="#C0E7D6")
 # Игра начинается здесь:
 label start:
 
-    scene bg room
+    scene bg room cu
 
     show paschalko
 
