@@ -10,6 +10,7 @@ define ps = Character('Пасхалко', color="#C0E7D6")
 
 # Игра начинается здесь:
 label start:
+    image bg room cu = im.Scale("images/bg room cu.png", 1920, 1080)
 
     scene bg room cu
 
