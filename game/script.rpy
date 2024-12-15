@@ -15,11 +15,17 @@ label start:
     scene bg room cu
 
     show paschalko
-
+    
+    play voice "audio/chan voice demo.ogg"
+    
     ps "мяу мяу"
 
-    ps "гав гав"
 
+
+    ps "гав гав"
+    
+    
+    
     ps "уау уау"
 
     return
