@@ -48,7 +48,7 @@ define build.name = "codetyan"
 
 define config.has_sound = True
 define config.has_music = True
-define config.has_voice = False
+define config.has_voice = True
 
 
 ## Чтобы разрешить игроку тестировать громкость на звуковом или голосовом
