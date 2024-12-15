@@ -1,7 +1,9 @@
 ﻿# Вы можете расположить сценарий своей игры в этом файле.
 
 # Определение персонажей игры.
-define ps = Character('Пасхалко', color="#C0E7D6")
+define ps = Character('Пасхалко', callback = ps, color="#C0E7D6")
+
+
 
 # Вместо использования оператора image можете просто
 # складывать все ваши файлы изображений в папку images.
@@ -16,7 +18,7 @@ label start:
 
     show paschalko
     
-    play voice "audio/chan voice demo.ogg"
+    
     
     ps "мяу мяу"
 

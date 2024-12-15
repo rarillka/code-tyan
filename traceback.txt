@@ -1,16 +1,14 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 21, in script
+  File "game/script.rpy", line 23, in script
     ps "мяу мяу"
-  File "game/options.rpy", line 168, in play_typing_sound
-    renpy.sound.play("audio/chan voice demo.ogg", channel="typing", loop=True)
-Exception: Audio channel 'typing' is unknown.
+TypeError: 'str' object is not callable
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 21, in script
+  File "game/script.rpy", line 23, in script
     ps "мяу мяу"
   File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 2560, in execute
     Say.execute(self)
@@ -22,19 +20,11 @@ Full traceback:
     self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
   File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\character.py", line 1045, in do_display
     display_say(who,
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\character.py", line 632, in display_say
-    c("show", interact=interact, type=type, **cb_args)
-  File "game/options.rpy", line 168, in play_typing_sound
-    renpy.sound.play("audio/chan voice demo.ogg", channel="typing", loop=True)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\audio\sound.py", line 36, in play
-    renpy.audio.music.play(filename,
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\audio\music.py", line 103, in play
-    c = get_channel(channel)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\audio\audio.py", line 922, in get_channel
-    raise Exception("Audio channel %r is unknown." % name)
-Exception: Audio channel 'typing' is unknown.
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\character.py", line 519, in display_say
+    c("begin", interact=interact, type=type, **cb_args)
+TypeError: 'str' object is not callable
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.2.3.24061702
 code tyan 1.0
-Sun Dec 15 14:36:02 2024
+Sun Dec 15 14:50:09 2024

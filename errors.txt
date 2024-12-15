@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 13: end of line expected.
-    add "bg room cu.png":
-                        ^
+File "game/options.rpy", line 169: invalid syntax
+    define пасхалко = Character("Пасхалко", callback=ps)
+            ^
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Sat Dec 14 12:02:37 2024
+Sun Dec 15 14:56:07 2024
