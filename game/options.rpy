@@ -160,12 +160,7 @@ define config.window_icon = "gui/window_icon.png"
 ## проекта.
 
 init python:
-    def ps(event, **kwargs):
-        if event == "show":
-            renpy.music.play("audio/chan voice demo.ogg", channel="voice", loop="True")
-        elif event == "slow_done" or event == "end":
-            renpy.music.stop(channel="voice")
-
+    
 
     ## Следующие функции берут образцы файлов. Образцы файлов не учитывают
     ## регистр и соответствующе зависят от директории проекта (base), с или без

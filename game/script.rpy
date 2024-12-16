@@ -1,7 +1,16 @@
 ﻿# Вы можете расположить сценарий своей игры в этом файле.
 
+init python:
+    def callback(event, **kwargs):
+        if event == "show":
+            renpy.music.play("voices/chan voice demo.ogg", channel="sound")
+        elif event == "slow_done" or event == "end":
+            renpy.music.stop(channel="sound")
+
+    
+
 # Определение персонажей игры.
-define ps = Character('Пасхалко', callback = ps, color="#C0E7D6")
+define ps = Character("пасхалко", callback=callback, color="#B22222")
 
 
 
@@ -12,6 +21,7 @@ define ps = Character('Пасхалко', callback = ps, color="#C0E7D6")
 
 # Игра начинается здесь:
 label start:
+
     image bg room cu = im.Scale("images/bg room cu.png", 1920, 1080)
 
     scene bg room cu
@@ -20,14 +30,15 @@ label start:
     
     
     
-    ps "мяу мяу"
+    ps "{cps=50}мяу мяу мяу мяу мяу мяу мяу мяу мяу мяу мяу мяу мяу мяу мяу мяу{/cps}"
 
 
 
-    ps "гав гав"
+    ps "{cps=50}гав гав{/cps}"
     
     
     
-    ps "уау уау"
+    ps "{cps=50}уау уау{/cps}"
+
 
     return

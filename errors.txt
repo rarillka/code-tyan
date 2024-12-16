@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/options.rpy", line 169: invalid syntax
-    define пасхалко = Character("Пасхалко", callback=ps)
-            ^
+File "game/script.rpy", line 3: expected statement.
+    iinit python:
+          ^
+
+File "game/script.rpy", line 13: expected statement.
+    ps = Character("пасхалко", callback=callback)
+       ^
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Sun Dec 15 14:56:07 2024
+Mon Dec 16 11:38:23 2024
