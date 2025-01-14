@@ -1,7 +1,7 @@
 ﻿# Вы можете расположить сценарий своей игры в этом файле.
 
 init python:
-    def callback(event, **kwargs):
+    def pychan_voice(event, **kwargs):
         if event == "show":
             renpy.music.play("voices/chan voice demo.ogg", channel="sound")
         elif event == "slow_done" or event == "end":
@@ -10,7 +10,7 @@ init python:
     
 
 # Определение персонажей игры.
-define ps = Character("пасхалко", callback=callback, color="#B22222")
+define ps = Character("пасхалко", callback=pychan_voice, color="#B22222")
 
 
 
