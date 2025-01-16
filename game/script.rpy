@@ -7,12 +7,17 @@ init python:
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
 
+    def cchan_voice(event, **kwargs):
+        if event == "show":
+            renpy.music.play("voices/chan 2 voice.ogg", channel="sound")
+        elif event == "slow_done" or event == "end":
+            renpy.music.stop(channel="sound")
     
 
 # Определение персонажей игры.
 define ps = Character("пасхалко", callback=pychan_voice, color="#B22222")
 
-
+define ps2 = Character("пасхалко2", callback=c_chan_voice, color="#FFFFFF")
 
 # Вместо использования оператора image можете просто
 # складывать все ваши файлы изображений в папку images.
@@ -34,7 +39,7 @@ label start:
 
 
 
-    ps "{cps=50}гав гав{/cps}"
+    ps2 "{cps=50}гав гав{/cps}"
     
     
     
