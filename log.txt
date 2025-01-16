@@ -1,24 +1,51 @@
-2025-01-16 13:47:03 UTC
+2025-01-16 14:08:38 UTC
 Windows-10-10.0.19045
 Ren'Py 8.2.3.24061702
 
 Early init took 0.04s
 Loading error handling took 0.02s
+Loading script took 0.05s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+Running init code took 0.02s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.01s
+Index archives took 0.00s
+Dump and make backups took 0.02s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.02s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.15s
+Cleaning stores took 0.00s
+Init translation took 0.02s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Interface start took 0.03s
 
-Full traceback:
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\bootstrap.py", line 359, in bootstrap
-    renpy.main.main()
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\main.py", line 455, in main
-    renpy.game.script.load_script() # sets renpy.game.script.
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\script.py", line 359, in load_script
-    self.load_appropriate_file(".rpyc", [ "_ren.py", ".rpy" ], dir, fn, initcode)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\script.py", line 957, in load_appropriate_file
-    self.finish_load(stmts, initcode, filename=lastfn) # type: ignore
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\script.py", line 590, in finish_load
-    check_name(node)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\script.py", line 566, in check_name
-    raise ScriptError("Name %s is defined twice, at %s:%d and %s:%d." %
-ScriptError: Name ('game/gui.rpy', 1732294974, 571) is defined twice, at game/gui.rpy:11 and game/images/code-tyan/code-tyan/game/gui.rpyc:11.
-
-While loading the script.
-ScriptError: Name ('game/gui.rpy', 1732294974, 571) is defined twice, at game/gui.rpy:11 and game/images/code-tyan/code-tyan/game/gui.rpyc:11.
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4060/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1671, 940) drawable=(1671, 940)
+Maximum texture size: 4096x4096
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.02s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s

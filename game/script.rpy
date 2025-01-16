@@ -7,7 +7,7 @@ init python:
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
 
-    def cchan_voice(event, **kwargs):
+    def c_chan_voice(event, **kwargs):
         if event == "show":
             renpy.music.play("voices/chan 2 voice.ogg", channel="sound")
         elif event == "slow_done" or event == "end":
@@ -39,7 +39,7 @@ label start:
 
 
 
-    ps2 "{cps=50}гав гав{/cps}"
+    ps2 "{cps=50}гав гав test test test test test test test test test test {/cps}"
     
     
     
