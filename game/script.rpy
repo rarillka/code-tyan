@@ -12,13 +12,17 @@ init python:
             renpy.music.play("voices/chan 2 voice.ogg", channel="sound")
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
+
+    def gen_voice(event, **kwargs):
+        if event == "show":
+            renpy.music.play("voices/general_1.ogg", channel="sound")
+        elif event == "slow_done" or event == "end":
+            renpy.music.stop(channel="sound")
     
 
 # Определение персонажей игры.
-define ps = Character("пасхалко", callback=pychan_voice, color="#B22222")
-
-define ps2 = Character("пасхалко2", callback=c_chan_voice, color="#FFFFFF")
-
+define Пайчан = Character("пасхалко", callback=pychan_voice, color="#d3c612")
+define you = Character("", callback=gen_voice)
 # Вместо использования оператора image можете просто
 # складывать все ваши файлы изображений в папку images.
 # Например, сцену bg room можно вызвать файлом "bg room.png",
@@ -27,23 +31,22 @@ define ps2 = Character("пасхалко2", callback=c_chan_voice, color="#FFFFF
 # Игра начинается здесь:
 label start:
 
-    image bg room cu = im.Scale("images/bg room cu.png", 1920, 1080)
+    image city = im.Scale("images/bg city.jpg", 1920, 1080)
+    image room  = im.Scale("images/bg room.jpg", 1920, 1080)
 
-    scene bg room cu
+    scene city
+    with Dissolve(1.5)
 
-    show paschalko
-    
-    
-    
-    ps "{cps=50}мяу мяу мяу мяу мяу мяу мяу мяу мяу мяу мяу мяу мяу мяу мяу мяу{/cps}"
+    "{cps=50}2040 год. За короткие сроки информационное
+развитие смогло достичь своего пика.{/cps}"
+    with Dissolve(0.5)
+
+    "{cps=50}Все больше людей стали отдавать предпочтение
+профессиям в сфере информационных
+технологий, желание освоить
+программирование стало навязанной нормой.{/cps}"
 
 
-
-    ps2 "{cps=50}гав гав test test test test test test test test test test {/cps}"
-    
-    
-    
-    ps "{cps=50}уау уау{/cps}"
 
 
     return

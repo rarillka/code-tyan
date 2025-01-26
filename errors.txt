@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 3: expected statement.
-    iinit python:
-          ^
-
-File "game/script.rpy", line 13: expected statement.
-    ps = Character("пасхалко", callback=callback)
-       ^
+File "game/script.rpy", line 18: expected '=' not found.
+    define Пай чан = Character("пасхалко", callback=pychan_voice, color="#d3c612")
+               ^
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Mon Dec 16 11:38:23 2024
+Sun Jan 26 13:11:58 2025
