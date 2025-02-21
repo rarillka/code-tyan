@@ -19,20 +19,22 @@ define you = Character("")
 
 # Игра начинается здесь:
 label start:
-
+    python:
+        _preferences.set_volume('music', 0.3)
     image city = im.Scale("images/bg city.jpg", 1920, 1080)
     image room  = im.Scale("images/bg room.jpg", 1920, 1080)
-
+    play music "music/Till Death Do Us Part.ogg" loop fadein 2.0
     scene city
     with Dissolve(1.5)
-
+    
     pc "{cps=50}2040 год. За короткие сроки информационное
 развитие смогло достичь своего пика.{/cps}"
     with Dissolve(0.5)
 
     pc"{cps=50}Все больше людей стали отдавать предпочтение
 профессиям в сфере информационных
-технологий, желание освоить
+технологий,{/cps}"
+    pc"{cps=50} желание освоить
 программирование стало навязанной нормой.{/cps}"
     pc"{cps=50}но.{/cps}"
 

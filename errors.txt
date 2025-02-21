@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 18: expected '=' not found.
-    define Пай чан = Character("пасхалко", callback=pychan_voice, color="#d3c612")
-               ^
+File "game/script.rpy", line 42: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    return
+    ^
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Sun Jan 26 13:11:58 2025
+Fri Feb 21 18:12:27 2025
