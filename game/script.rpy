@@ -24,6 +24,7 @@ label start:
     image city = im.Scale("images/bg city.jpg", 1920, 1080)
     image room  = im.Scale("images/bg room.jpg", 1920, 1080)
     play music "music/Till Death Do Us Part.ogg" loop fadein 3.0
+    
     scene city
     with Dissolve(1.5)
     

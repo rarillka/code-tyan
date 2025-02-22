@@ -259,7 +259,8 @@ define gui.navigation_xpos = 60
 define gui.skip_ypos = 15
 
 ## Вертикальная позиция экрана уведомлений.
-define gui.notify_ypos = 100
+define gui.notify_ypos = 75
+define gui.notify_xpos = 300
 
 ## Интервал между выборами в меню.
 define gui.choice_spacing = 33
@@ -298,7 +299,7 @@ define gui.confirm_frame_borders = Borders(60, 60, 60, 60)
 define gui.skip_frame_borders = Borders(24, 8, 75, 8)
 
 ## Рамки, используемые в частях экрана уведомлений.
-define gui.notify_frame_borders = Borders(50, 16, 120, 16)
+define gui.notify_frame_borders = Borders(500, 16, 500, 16)
 
 ## Должны ли фоны рамок моститься?
 define gui.frame_tile = False
