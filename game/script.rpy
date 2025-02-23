@@ -28,8 +28,14 @@ label start:
     scene city
     with Dissolve(1.5)
     
+    
+
     $ renpy.notify("2040 год.")
     with Dissolve(1.0)
+
+    
+
+ 
     "{cps=40}За короткие сроки информационное
 развитие смогло достичь своего пика.{/cps}"
     "{cps=40}Все больше людей стали отдавать предпочтение
@@ -44,9 +50,9 @@ label start:
     "{cps=40}А главной целью каждого стало {color=#0000ffff}доказать{/color}{/cps}"
     "{cps=40}{color=#0000ffff}Доказать,{/color} что ты полезнее машины{/cps}"
     "{cps=40}{color=#0000ffff}Доказать,{/color} что ты лучше машины.{/cps}"
-
-
-
-
+ 
+    call screen messed_up_input
+    $ a = _return
+    "[a]"
 
     return

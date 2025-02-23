@@ -94,6 +94,45 @@ style frame:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#say
 
+screen messed_up_input(prompt="???"):
+    zorder 101
+    modal True
+    frame:
+        align(0.5,0.5)
+        vbox:
+            xysize (1920,1088)
+            add "images/icon3.png" align(0.1, 0.1)
+            frame:
+                align (0.5, 0.6)
+                text prompt
+                input id "my_input"
+        hbox:
+            spacing 10
+            align (0.5, 0.5)
+            add "images/icon1.jpg"
+            add "images/icon2.jpg"
+            add "images/icon3.png"
+            add "images/icon4.jpg"
+
+screen somescrname(prompt="???"):
+    zorder 101
+    modal True
+    fixed xysize(1920,1088):
+        add "images/paschalko.png" align(0.5, 0.5)
+        frame:
+            align (0.5, 0.6)
+            input id somescrname
+            add input(hover_color="#3399ff",size=28, color="#000", default=somename, changed=somename_asd, length=10, button=renpy.get_widget("somescrname","input_1"))
+
+    hbox:
+        spacing 10
+        align (0.5, 0.5)
+        add "images/icon1.jpg"
+        add "images/icon2.jpg"
+        add "images/icon3.png"
+        add "images/icon4.jpg"
+
+
 screen say(who, what):
     style_prefix "say"
 
