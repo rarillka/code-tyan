@@ -94,7 +94,7 @@ style frame:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#say
 
-screen messed_up_input(prompt="???"):
+screen messed_up_input(prompt="ВОТ ДЕЛА! НА ЭТОМ ЭКРАНЕ ВСЕ В РАЗНОБОЙ! СТЫД И ПОЗОР РАЗРАБОТЧИКАМ!!!!"):
     zorder 101
     modal True
     frame:
