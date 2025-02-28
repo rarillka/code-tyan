@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 109: hbox expects a non-empty block.
-    hbox:
+File "game/screens.rpy", line 110: 'Solid' is not a keyword argument or valid child of the frame statement.
+    Solid 
          ^
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Sun Feb 23 18:55:19 2025
+Fri Feb 28 17:26:04 2025

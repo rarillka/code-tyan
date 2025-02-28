@@ -60,6 +60,6 @@ label start:
 
     call screen messed_up_input
     $ a = _return
-    "[a]"
+    "[a], у тебя аутизм, раз ты играешь в это"
 
     return

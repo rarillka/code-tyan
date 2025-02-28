@@ -94,25 +94,30 @@ style frame:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#say
 
+define whiteDefined = Solid("fff")
+
 screen messed_up_input(prompt="ВОТ ДЕЛА! НА ЭТОМ ЭКРАНЕ ВСЕ В РАЗНОБОЙ! СТЫД И ПОЗОР РАЗРАБОТЧИКАМ!!!!"):
     zorder 101
     modal True
     frame:
         align(0.5,0.5)
+        add whiteDefined
         vbox:
-            xysize (1920,1088)
-            add "images/icon3.png" align(0.1, 0.1)
+            align(0.5,0.5)
+            xysize (1000,1000)
+            add "images/icon3.png" align(0.5, 0.5) xysize(250,250)
             frame:
                 align (0.5, 0.6)
                 text prompt
-                input id "my_input"
+                input id "my_input" align(0.5, 0.4) xysize(500,500)
+                
         hbox:
             spacing 10
-            align (0.5, 0.5)
-            add "images/icon1.jpg"
-            add "images/icon2.jpg"
-            add "images/icon3.png"
-            add "images/icon4.jpg"
+            align (0.8, 0.7)
+            add "images/icon1.jpg" xysize(50,50)
+            add "images/icon2.jpg" xysize(50,50)
+            add "images/icon3.png" xysize(50,50)
+            add "images/icon4.jpg" xysize(50,50)
 
 screen somescrname(prompt="???"):
     zorder 101
