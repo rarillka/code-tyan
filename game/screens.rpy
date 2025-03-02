@@ -102,14 +102,15 @@ screen messed_up_input(prompt="ВОТ ДЕЛА! НА ЭТОМ ЭКРАНЕ ВС�
     frame:
         align(0.5,0.5)
         add whiteDefined
+        add "images/icon3.png" align(0.5, 0.2) xysize(250,250)
         vbox:
-            align(0.5,0.5)
-            xysize (1000,1000)
-            add "images/icon3.png" align(0.5, 0.5) xysize(250,250)
+            align(0.5,0.4)
+            xysize (250,200)
+            
             frame:
-                align (0.5, 0.6)
                 text prompt
-                input id "my_input" align(0.5, 0.4) xysize(500,500)
+                input id "my_input" align(0.5, 0.4) xysize(250,200)
+        
                 
         hbox:
             spacing 10

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 110: 'Solid' is not a keyword argument or valid child of the frame statement.
-    Solid 
-         ^
+File "game/screens.rpy", line 115: Line is indented, but the preceding add statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    hbox:
+    ^
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Fri Feb 28 17:26:04 2025
+Sat Mar  1 10:13:41 2025
