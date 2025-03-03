@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 115: Line is indented, but the preceding add statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    hbox:
-    ^
+File "game/script.rpy", line 70: end of line expected.
+    with fadein 1.0
+                ^
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Sat Mar  1 10:13:41 2025
+Mon Mar  3 20:52:48 2025

@@ -1,6 +1,7 @@
 ﻿# Вы можете расположить сценарий своей игры в этом файле.
 
 init python:
+    _preferences.set_volume('sound', 0.5)
     def pychan_voice(event, **kwargs):
         if event == "show":
             renpy.music.play("voices/pychan voice.ogg", channel="sound")
@@ -9,7 +10,7 @@ init python:
 
     def mc_voice(event, **kwargs):
         if event == "show":
-            renpy.music.play("voices/mc thinking.ogg", channel="sound")
+            renpy.music.play("voices/mc thinking.ogg", channel="sound" )
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
 
@@ -27,9 +28,9 @@ define mc = Character("", callback=mc_voice, color="#000")
 label start:
     python:
         _preferences.set_volume('music', 0.2)
+        
     image city = im.Scale("images/bg city.jpg", 1920, 1080)
     image room  = im.Scale("images/bg room.jpg", 1920, 1080)
-    
     
 
     $ renpy.notify("2040 год.")
@@ -63,19 +64,43 @@ label start:
 """
     
 
-    play music "music/Till Death Do Us Part.ogg" loop fadein 3.0
+    play music "music/bg song (reverb).mp3" loop fadein 1.5 volume 2.0
     
-    scene city
-    with Dissolve(1.5)
+    scene city 
+    with Dissolve(2.5)
     $ renpy.notify("5 ноября 2041г.")
-    with Dissolve(1.0)
+    with Dissolve(2.0)
+
+#ваще в этой сцене должны будут менятся фоновые картинки бат пока мы их не подобрали пусть будет вот так
+    """
+    Я шел домой, иногда поглядывая вверх смотря на
+вид бездушных вышек, устремляющихся в небо.
+
+Эти вышки, как бы они не пытались создавать
+могущественное впечатление будущего, были
+обычными неуютными человейниками.
+
+Вид которых не внушал ничего кроме утомления.
+
+Этот мир уже больше напоминает футуристичную антиутопию, нежели жизнь. 
+
+К этим мыслям я возвращался снова и снова,
+поднимаясь на узком лифте в свою крохотную
+квартиру.
+
+На протяжении последних 6 месяцев мы с моим
+«другом» работали над нашим проектом
+
+И, сегодня, он должен прислать мне первую
+полноценную версию его разработки.
+
+Может что-то там и работает…
+    """
 
 
 
-
-
-    call screen messed_up_input
-    $ a = _return
-    "[a], у тебя аутизм, раз ты играешь в это"
+    #call screen messed_up_input
+    #$ a = _return
+    #"[a], у тебя аутизм, раз ты играешь в это"
 
     return

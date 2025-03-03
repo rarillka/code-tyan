@@ -1,64 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While processing the color property of anonymous style:
-  File "game/script.rpy", line 41, in script
-    mc"За короткие сроки информационное
-Exception: Color string '00000' must be 3, 4, 6, or 8 hex digits long.
+While running game code:
+  File "game/script.rpy", line 69, in script
+    scene city fadein 1.0
+Exception: Image 'city' does not accept attributes 'fadein 1 .0'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 41, in script
-    mc"За короткие сроки информационное
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 2560, in execute
-    Say.execute(self)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 615, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\exports.py", line 1494, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\character.py", line 1394, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\character.py", line 1045, in do_display
-    display_say(who,
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\character.py", line 741, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 2166, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 2688, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 431, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 431, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 431, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\screen.py", line 485, in visit_all
-    self.child.visit_all(callback, seen=None)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 431, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 431, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 431, in visit_all
-    d.visit_all(callback, seen)
-  [Previous line repeated 1 more time]
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 433, in visit_all
-    callback(self)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 2688, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\text\text.py", line 1897, in per_interact
-    if self.style.slow_abortable:
-  File "gen3-static/styleclass.pxi", line 589, in renpy.styledata.styleclass.Style.slow_abortable.__get__
-  File "style.pyx", line 493, in renpy.style.StyleCore._get
-  File "style.pyx", line 717, in renpy.style.build_style
-  File "style.pyx", line 714, in renpy.style.build_style
-  File "gen3-static/style_functions.pyx", line 323, in style_functions.color_property
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\color.py", line 159, in __new__
-    raise Exception("Color string {!r} must be 3, 4, 6, or 8 hex digits long.".format(c))
-Exception: Color string '00000' must be 3, 4, 6, or 8 hex digits long.
+  File "game/script.rpy", line 69, in script
+    scene city fadein 1.0
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 1247, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 1076, in show_imspec
+    renpy.config.show(name,
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\exports.py", line 739, in show
+    if not base.find_target() and renpy.config.missing_show:
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\image.py", line 421, in find_target
+    self.target = target._duplicate(a)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 246, in _duplicate
+    args.extraneous()
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 109, in extraneous
+    raise Exception("Image '{}' does not accept attributes '{}'.".format(
+Exception: Image 'city' does not accept attributes 'fadein 1 .0'.
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.2.3.24061702
 code tyan 1.0
-Sun Mar  2 18:50:04 2025
+Mon Mar  3 20:52:31 2025
