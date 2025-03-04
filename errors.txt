@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 70: end of line expected.
-    with fadein 1.0
-                ^
+File "game/screens.rpy", line 102: 'with' is not a keyword argument or valid child of the screen statement.
+    with Dissolve(1.0)
+        ^
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Mon Mar  3 20:52:48 2025
+Tue Mar  4 18:33:31 2025
