@@ -2,29 +2,50 @@
 
 While running game code:
   File "game/script.rpy", line 69, in script
-    scene city fadein 1.0
-Exception: Image 'city' does not accept attributes 'fadein 1 .0'.
+    scene city
+  File "renpy/common/000window.rpy", line 123, in _window_auto_callback
+    _window_hide(auto=True)
+  File "renpy/common/000window.rpy", line 106, in _window_hide
+    renpy.with_statement(trans)
+OSError: Couldn't find file 'Till Death Do Us Part.ogg'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
   File "game/script.rpy", line 69, in script
-    scene city fadein 1.0
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 1247, in execute
-    show_imspec(self.imspec, atl=getattr(self, "atl", None))
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 1076, in show_imspec
-    renpy.config.show(name,
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\exports.py", line 739, in show
-    if not base.find_target() and renpy.config.missing_show:
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\image.py", line 421, in find_target
-    self.target = target._duplicate(a)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 246, in _duplicate
-    args.extraneous()
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 109, in extraneous
-    raise Exception("Image '{}' does not accept attributes '{}'.".format(
-Exception: Image 'city' does not accept attributes 'fadein 1 .0'.
+    scene city
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 1242, in execute
+    statement_name("scene")
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 52, in statement_name
+    i(name)
+  File "renpy/common/000window.rpy", line 123, in _window_auto_callback
+    _window_hide(auto=True)
+  File "renpy/common/000window.rpy", line 106, in _window_hide
+    renpy.with_statement(trans)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\exports.py", line 1782, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 1549, in do_with
+    return self.interact(trans_pause=True,
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 2166, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 3026, in interact_core
+    renpy.audio.audio.periodic()
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\audio\audio.py", line 1199, in periodic
+    raise_(exc[0], exc[1], exc[2])
+  File "lib/python3.9/future/utils/__init__.py", line 444, in raise_
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\audio\audio.py", line 1177, in periodic_thread_main
+    periodic_pass()
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\audio\audio.py", line 1119, in periodic_pass
+    c.periodic()
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\audio\audio.py", line 528, in periodic
+    topf = load(filename)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\audio\audio.py", line 72, in load
+    rv = renpy.loader.load(fn, directory="audio")
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\loader.py", line 672, in load
+    raise IOError("Couldn't find file '%s'." % name)
+OSError: Couldn't find file 'Till Death Do Us Part.ogg'.
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.2.3.24061702
 code tyan 1.0
-Mon Mar  3 20:52:31 2025
+Tue Mar  4 18:05:48 2025
