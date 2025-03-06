@@ -66,7 +66,7 @@ label start:
 """
     
 
-    play music "music/Till Death Do Us Part.ogg" loop fadein 1.5 volume 1.5
+    play music "music/Comfortable Mystery 4.mp3" loop fadein 1.5 volume 1.5
     
     scene city 
     with Dissolve(2.5)
