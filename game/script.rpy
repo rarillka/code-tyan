@@ -29,8 +29,8 @@ label start:
     python:
         _preferences.set_volume('music', 0.2)
         
-    image city = im.Scale("images/bg city.jpg", 1920, 1080)
-    image room  = im.Scale("images/bg room.jpg", 1920, 1080)
+    image city = im.Scale("images/bg city.jpeg", 1920, 1080)
+    image room  = im.Scale("images/bg room.jpeg", 1920, 1080)
     
 
     $ renpy.notify("2040 год.")
