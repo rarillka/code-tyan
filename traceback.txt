@@ -1,32 +1,16 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 103, in script
+  File "game/script.rpy", line 106, in script
     call screen messed_up_input
   File "renpy/common/000statements.rpy", line 671, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/screens.rpy", line 99, in execute
-    screen messed_up_input(prompt="ВОТ ДЕЛА! НА ЭТОМ ЭКРАНЕ ВСЕ В РАЗНОБОЙ! СТЫД И ПОЗОР РАЗРАБОТЧИКАМ!!!!"):
-  File "game/screens.rpy", line 99, in execute
-    screen messed_up_input(prompt="ВОТ ДЕЛА! НА ЭТОМ ЭКРАНЕ ВСЕ В РАЗНОБОЙ! СТЫД И ПОЗОР РАЗРАБОТЧИКАМ!!!!"):
-  File "game/screens.rpy", line 102, in execute
-    frame:
-  File "game/screens.rpy", line 106, in execute
-    vbox:
-  File "game/screens.rpy", line 110, in execute
-    frame:
-  File "game/screens.rpy", line 112, in execute
-    input id my_input align(0.5, 0.4) xysize(250,200)
-  File "game/screens.rpy", line 112, in keywords
-    input id my_input align(0.5, 0.4) xysize(250,200)
-  File "game/screens.rpy", line 112, in <module>
-    input id my_input align(0.5, 0.4) xysize(250,200)
-NameError: name 'my_input' is not defined
+TypeError: Value () of type <class 'tuple'> not recognized as a position.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 103, in script
+  File "game/script.rpy", line 106, in script
     call screen messed_up_input
   File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 1971, in execute
     self.call("execute")
@@ -42,41 +26,55 @@ Full traceback:
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 2166, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 2688, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 431, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 431, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 431, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 2688, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\screen.py", line 491, in per_interact
-    self.update()
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\screen.py", line 697, in update
-    self.screen.function(**self.scope)
-  File "game/screens.rpy", line 99, in execute
-    screen messed_up_input(prompt="ВОТ ДЕЛА! НА ЭТОМ ЭКРАНЕ ВСЕ В РАЗНОБОЙ! СТЫД И ПОЗОР РАЗРАБОТЧИКАМ!!!!"):
-  File "game/screens.rpy", line 99, in execute
-    screen messed_up_input(prompt="ВОТ ДЕЛА! НА ЭТОМ ЭКРАНЕ ВСЕ В РАЗНОБОЙ! СТЫД И ПОЗОР РАЗРАБОТЧИКАМ!!!!"):
-  File "game/screens.rpy", line 102, in execute
-    frame:
-  File "game/screens.rpy", line 106, in execute
-    vbox:
-  File "game/screens.rpy", line 110, in execute
-    frame:
-  File "game/screens.rpy", line 112, in execute
-    input id my_input align(0.5, 0.4) xysize(250,200)
-  File "game/screens.rpy", line 112, in keywords
-    input id my_input align(0.5, 0.4) xysize(250,200)
-  File "game/screens.rpy", line 112, in <module>
-    input id my_input align(0.5, 0.4) xysize(250,200)
-NameError: name 'my_input' is not defined
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 2819, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 1353, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 486, in renpy.display.render.render_screen
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\screen.py", line 754, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 1361, in render
+    surf = render(child,
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 1361, in render
+    surf = render(child,
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 913, in render
+    offset = child.place(rv, 0, 0, width, height, surf)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 490, in place
+    xpos, ypos = place(width, height, surf.width, surf.height, placement)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 61, in place
+    xpos = compute_raw(xpos, width)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 226, in compute_raw
+    raise TypeError("Value {} of type {} not recognized as a position.".format(value, type(value)))
+TypeError: Value () of type <class 'tuple'> not recognized as a position.
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.2.3.24061702
 code tyan 1.0
-Mon Mar 10 17:44:42 2025
+Mon Mar 10 18:56:45 2025

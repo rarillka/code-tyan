@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 102: 'with' is not a keyword argument or valid child of the screen statement.
-    with Dissolve(1.0)
-        ^
+File "game/screens.rpy", line 110: the ypos keyword argument was not given a value.
+    text prompt xpos(8) ypos
+                            ^
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Tue Mar  4 18:33:31 2025
+Mon Mar 10 18:57:14 2025

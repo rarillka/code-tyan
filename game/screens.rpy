@@ -94,22 +94,21 @@ style frame:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#say
 
-define whiteDefined = Solid("fff")
 
-screen messed_up_input(prompt="ВОТ ДЕЛА! НА ЭТОМ ЭКРАНЕ ВСЕ В РАЗНОБОЙ! СТЫД И ПОЗОР РАЗРАБОТЧИКАМ!!!!"):
+
+screen messed_up_input(prompt="Введите ваше имя"):
     zorder 101
     modal True
     frame:
-        align(0.5,0.5)
-        add whiteDefined
-        add "images/icon3.png" align(0.5, 0.2) xysize(250,250)
-        vbox:
-            align(0.5,0.4)
-            xysize (250,200)
-            
-            frame:
-                text prompt
-                input id "my_input" align(0.5, 0.4) xysize(250,200)
+        xysize(100,100)
+        add "images/Group 2 (1).png" ypos(-6) xpos(-6)
+        frame:
+            background "images/Rectangle 1.png"
+            xysize(318,68)
+            xpos(783)
+            ypos(623)
+            text prompt xpos(8) ypos(75)
+            input id "my_input"  xpos(8) ypos(7)
         
 
 screen somescrname(prompt="???"):
@@ -120,7 +119,7 @@ screen somescrname(prompt="???"):
         frame:
             align (0.5, 0.6)
             input id somescrname
-            add input(hover_color="#3399ff",size=28, color="#000", default=somename, changed=somename_asd, length=10, button=renpy.get_widget("somescrname","input_1"))
+            add input(hover_color="#cfcfcf",size=28, color="#000", default=somename, changed=somename_asd, length=10, button=renpy.get_widget("somescrname","input_1"))
 
     hbox:
         spacing 10

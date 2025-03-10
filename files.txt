@@ -1,0 +1,175 @@
+README.md
+gui.rpy
+gui.rpyc
+options.rpy
+options.rpyc
+screens.rpy
+screens.rpyc
+script.rpy
+script.rpyc
+.vscode\settings.json
+audio\bleeps pack\bleep001.ogg
+audio\bleeps pack\bleep002.ogg
+audio\bleeps pack\bleep003.ogg
+audio\bleeps pack\bleep004.ogg
+audio\bleeps pack\bleep005.ogg
+audio\bleeps pack\bleep006.ogg
+audio\bleeps pack\bleep007.ogg
+audio\bleeps pack\bleep008.ogg
+audio\bleeps pack\bleep009.ogg
+audio\bleeps pack\bleep010.ogg
+audio\bleeps pack\bleep011.ogg
+audio\bleeps pack\bleep012.ogg
+audio\bleeps pack\bleep013.ogg
+audio\bleeps pack\bleep014.ogg
+audio\bleeps pack\bleep015.ogg
+audio\bleeps pack\bleep016.ogg
+audio\bleeps pack\bleep017.ogg
+audio\bleeps pack\bleep018.ogg
+audio\bleeps pack\bleep019.ogg
+audio\bleeps pack\bleep020.ogg
+audio\bleeps pack\bleep021.ogg
+audio\bleeps pack\bleep022.ogg
+audio\bleeps pack\bleep023.ogg
+audio\bleeps pack\bleep024.ogg
+audio\bleeps pack\bleep025.ogg
+audio\bleeps pack\bleep026.ogg
+audio\bleeps pack\bleep027.ogg
+audio\bleeps pack\bleep029.ogg
+audio\bleeps pack\bleep030.ogg
+audio\bleeps pack\general.ogg
+audio\music\Comfortable Mystery 3.mp3
+audio\music\Comfortable Mystery 4.mp3
+audio\music\Till Death Do Us Part.ogg
+audio\music\bg song (reverb).mp3
+audio\music\possible ending song.mp3
+audio\sounds\okorosu.ogg
+audio\voices\bg sonп (unedited).mp3
+audio\voices\chan 2 voice.ogg
+audio\voices\chan voice demo.ogg
+audio\voices\general_1.ogg
+audio\voices\mc thinking.ogg
+audio\voices\pychan voice.ogg
+cache\bytecode-39.rpyb
+cache\py3analysis.rpyb
+cache\screens.rpyb
+cache\shaders.txt
+fonts\Jura-VariableFont_wght.ttf
+fonts\PressStart2P-Regular.ttf
+gui\bubble.png
+gui\frame.png
+gui\game_menu.png
+gui\main_menu.png
+gui\namebox.png
+gui\notify.png
+gui\nvl.png
+gui\skip.png
+gui\textbox.png
+gui\textbox1.png
+gui\textbox2.png
+gui\thoughtbubble.png
+gui\window_icon.png
+gui\bar\bottom.png
+gui\bar\left.png
+gui\bar\right.png
+gui\bar\top.png
+gui\button\check_foreground.png
+gui\button\check_selected_foreground.png
+gui\button\choice_hover_background.png
+gui\button\choice_idle_background.png
+gui\button\hover_background.png
+gui\button\idle_background.png
+gui\button\quick_hover_background.png
+gui\button\quick_idle_background.png
+gui\button\radio_foreground.png
+gui\button\radio_selected_foreground.png
+gui\button\slot_hover_background.png
+gui\button\slot_idle_background.png
+gui\overlay\confirm.png
+gui\overlay\game_menu.png
+gui\overlay\main_menu.png
+gui\phone\nvl.png
+gui\phone\textbox.png
+gui\phone\bar\bottom.png
+gui\phone\bar\left.png
+gui\phone\bar\right.png
+gui\phone\bar\top.png
+gui\phone\button\check_foreground.png
+gui\phone\button\check_selected_foreground.png
+gui\phone\button\choice_hover_background.png
+gui\phone\button\choice_idle_background.png
+gui\phone\button\hover_background.png
+gui\phone\button\idle_background.png
+gui\phone\button\radio_foreground.png
+gui\phone\button\radio_selected_foreground.png
+gui\phone\button\slot_hover_background.png
+gui\phone\button\slot_idle_background.png
+gui\phone\overlay\game_menu.png
+gui\phone\overlay\main_menu.png
+gui\phone\scrollbar\horizontal_hover_bar.png
+gui\phone\scrollbar\horizontal_hover_thumb.png
+gui\phone\scrollbar\horizontal_idle_bar.png
+gui\phone\scrollbar\horizontal_idle_thumb.png
+gui\phone\scrollbar\vertical_hover_bar.png
+gui\phone\scrollbar\vertical_hover_thumb.png
+gui\phone\scrollbar\vertical_idle_bar.png
+gui\phone\scrollbar\vertical_idle_thumb.png
+gui\phone\slider\horizontal_hover_bar.png
+gui\phone\slider\horizontal_hover_thumb.png
+gui\phone\slider\horizontal_idle_bar.png
+gui\phone\slider\horizontal_idle_thumb.png
+gui\phone\slider\vertical_hover_bar.png
+gui\phone\slider\vertical_hover_thumb.png
+gui\phone\slider\vertical_idle_bar.png
+gui\phone\slider\vertical_idle_thumb.png
+gui\scrollbar\horizontal_hover_bar.png
+gui\scrollbar\horizontal_hover_thumb.png
+gui\scrollbar\horizontal_idle_bar.png
+gui\scrollbar\horizontal_idle_thumb.png
+gui\scrollbar\vertical_hover_bar.png
+gui\scrollbar\vertical_hover_thumb.png
+gui\scrollbar\vertical_idle_bar.png
+gui\scrollbar\vertical_idle_thumb.png
+gui\slider\horizontal_hover_bar.png
+gui\slider\horizontal_hover_thumb.png
+gui\slider\horizontal_idle_bar.png
+gui\slider\horizontal_idle_thumb.png
+gui\slider\vertical_hover_bar.png
+gui\slider\vertical_hover_thumb.png
+gui\slider\vertical_idle_bar.png
+gui\slider\vertical_idle_thumb.png
+images\Group 2 (1).png
+images\Slide 16_9 - 2.png
+images\bg city.jpeg
+images\bg lobby.jpeg
+images\bg room.jpeg
+images\bg street.jpg
+images\icon1.jpg
+images\icon2.jpg
+images\icon3.png
+images\icon4.jpg
+images\idk.pdf
+images\paschalko.png
+images\pychan defa.png
+images\pych sprites\pc general annoyed.jpg
+images\pych sprites\pc general concerned.jpg
+images\pych sprites\pc general confused.jpg
+images\pych sprites\pc general happy.jpg
+images\pych sprites\pc general netrual.jpg
+images\pych sprites\pc general speaking netrual.jpg
+saves\1-1-LT1.save
+saves\_reload-2-LT1.save
+saves\auto-1-LT1.save
+saves\auto-10-LT1.save
+saves\auto-2-LT1.save
+saves\auto-3-LT1.save
+saves\auto-4-LT1.save
+saves\auto-5-LT1.save
+saves\auto-6-LT1.save
+saves\auto-7-LT1.save
+saves\auto-8-LT1.save
+saves\auto-9-LT1.save
+saves\navigation.json
+saves\persistent
+tl\None\common.rpym
+tl\None\common.rpymc
