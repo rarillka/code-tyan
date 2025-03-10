@@ -111,14 +111,6 @@ screen messed_up_input(prompt="ВОТ ДЕЛА! НА ЭТОМ ЭКРАНЕ ВС�
                 text prompt
                 input id "my_input" align(0.5, 0.4) xysize(250,200)
         
-                
-        hbox:
-            spacing 10
-            align (0.8, 0.7)
-            add "images/icon1.jpg" xysize(50,50)
-            add "images/icon2.jpg" xysize(50,50)
-            add "images/icon3.png" xysize(50,50)
-            add "images/icon4.jpg" xysize(50,50)
 
 screen somescrname(prompt="???"):
     zorder 101

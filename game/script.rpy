@@ -100,10 +100,8 @@ label start:
     #нужно добавить картинок и разнообразить текст потому что повествование идёт слишклм быстро и скомканно
 
 
-    show screen messed_up_input
-    with Dissolve(1.0)
-    
+    call screen messed_up_input
     $ a = _return
+    "[a]"
     "[a], у тебя аутизм, раз ты играешь в это"
-
     return
