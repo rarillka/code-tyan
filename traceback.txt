@@ -1,7 +1,7 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 106, in script
+  File "game/script.rpy", line 105, in script
     call screen messed_up_input
   File "renpy/common/000statements.rpy", line 671, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
@@ -10,7 +10,7 @@ TypeError: Value () of type <class 'tuple'> not recognized as a position.
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 106, in script
+  File "game/script.rpy", line 105, in script
     call screen messed_up_input
   File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 1971, in execute
     self.call("execute")
@@ -68,8 +68,8 @@ Full traceback:
     offset = child.place(rv, 0, 0, width, height, surf)
   File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 490, in place
     xpos, ypos = place(width, height, surf.width, surf.height, placement)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 61, in place
-    xpos = compute_raw(xpos, width)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 67, in place
+    ypos = compute_raw(ypos, height)
   File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 226, in compute_raw
     raise TypeError("Value {} of type {} not recognized as a position.".format(value, type(value)))
 TypeError: Value () of type <class 'tuple'> not recognized as a position.
@@ -77,4 +77,4 @@ TypeError: Value () of type <class 'tuple'> not recognized as a position.
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.2.3.24061702
 code tyan 1.0
-Mon Mar 10 18:56:45 2025
+Thu Mar 13 20:18:48 2025

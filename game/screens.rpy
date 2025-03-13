@@ -99,16 +99,17 @@ style frame:
 screen messed_up_input(prompt="Введите ваше имя"):
     zorder 101
     modal True
+
     frame:
         xysize(100,100)
         add "images/Group 2 (1).png" ypos(-6) xpos(-6)
         frame:
             background "images/Rectangle 1.png"
-            xysize(318,68)
-            xpos(783)
-            ypos(623)
-            text prompt xpos(8) ypos(75)
-            input id "my_input"  xpos(8) ypos(7)
+            xysize(328,40)
+            xpos(37)
+            ypos(459)
+            text prompt xpos(8) ypos(30)
+            input id "my_input"  xpos(8) ypos(-13)
         
 
 screen somescrname(prompt="???"):

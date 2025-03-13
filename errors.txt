@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 110: the ypos keyword argument was not given a value.
-    text prompt xpos(8) ypos
-                            ^
+File "game/screens.rpy", line 105: expected a keyword argument, colon, or end of line.
+    imagebutton"images/button.png":
+               ^
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Mon Mar 10 18:57:14 2025
+Thu Mar 13 20:15:44 2025
