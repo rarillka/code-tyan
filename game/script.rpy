@@ -67,7 +67,7 @@ label start:
 """
     
 
-    play music "music/Comfortable Mystery 4.mp3" loop fadein 1.5 volume 1.5
+    play music "music/Comfortable Mystery 4.mp3" loop fadein 1.0 volume 1.5
     
     scene city 
     with Dissolve(2.5)
@@ -105,6 +105,6 @@ label start:
     call screen messed_up_input
     $ a = _return
     "[a]"
-    "[a], у тебя аутизм, раз ты играешь в это"
+    "[a], у тебя отвратительный вкус в играх, раз ты играешь в это"
 
     return
