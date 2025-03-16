@@ -1,80 +1,37 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 105, in script
-    call screen messed_up_input
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-TypeError: Value () of type <class 'tuple'> not recognized as a position.
+  File "renpy/common/00keymap.rpy", line 487, in script
+    python hide:
+  File "renpy/common/00keymap.rpy", line 487, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 511, in _execute_python_hide
+    renpy.save("_reload-1", "reload save game")
+PicklingError: Can't pickle <class 'store.director.AddStatement'>: it's not the same object as store.director.AddStatement
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 105, in script
-    call screen messed_up_input
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 1971, in execute
-    self.call("execute")
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 1953, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\statements.py", line 349, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\exports.py", line 3420, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 2166, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 2819, in interact_core
-    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 1353, in draw_screen
-    surftree = renpy.display.render.render_screen(
-  File "render.pyx", line 486, in renpy.display.render.render_screen
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\screen.py", line 754, in render
-    child = renpy.display.render.render(self.child, w, h, st, at)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 1361, in render
-    surf = render(child,
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 1361, in render
-    surf = render(child,
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 913, in render
-    offset = child.place(rv, 0, 0, width, height, surf)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 490, in place
-    xpos, ypos = place(width, height, surf.width, surf.height, placement)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 67, in place
-    ypos = compute_raw(ypos, height)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 226, in compute_raw
-    raise TypeError("Value {} of type {} not recognized as a position.".format(value, type(value)))
-TypeError: Value () of type <class 'tuple'> not recognized as a position.
+  File "renpy/common/00keymap.rpy", line 487, in script
+    python hide:
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 823, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\python.py", line 1178, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00keymap.rpy", line 487, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 511, in _execute_python_hide
+    renpy.save("_reload-1", "reload save game")
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\loadsave.py", line 431, in save
+    reraise(t, e, tb)
+  File "lib/python3.9/future/utils/__init__.py", line 444, in raise_
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\loadsave.py", line 417, in save
+    dump((roots, renpy.game.log), logf)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\compat\pickle.py", line 103, in dump
+    pickle.dump(o, f, pickle.HIGHEST_PROTOCOL if highest else PROTOCOL)
+PicklingError: Can't pickle <class 'store.director.AddStatement'>: it's not the same object as store.director.AddStatement
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.2.3.24061702
 code tyan 1.0
-Thu Mar 13 20:18:48 2025
+Sun Mar 16 15:02:10 2025

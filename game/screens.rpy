@@ -208,6 +208,120 @@ style say_dialogue:
 ## различные вводимые параметры.
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#input
+style custom_input:
+    # Основные параметры
+    background "#ffffff"  # Цвет фона
+    foreground "#C2A1C7"  # Цвет текста
+    selected_background "#444444"  # Цвет фона выделенного текста
+    selected_foreground "#a80076"  # Цвет выделенного текста
+    
+    # Размеры и отступы
+    xpadding 10  # Горизонтальный отступ
+    ypadding 5   # Вертикальный отступ
+    xmargin 0    # Внешний отступ по горизонтали
+    ymargin 0    # Внешний отступ по вертикали
+    
+    # Шрифт
+    font "DejaVuSans.ttf"  # Шрифт
+    size 20               # Размер шрифта
+    antialias True       # Сглаживание текста
+    
+    # Позиционирование           # Выравнивание по горизонтали
+    xalign 0.5
+    yalign 0.5         # Выравнивание по вертикали
+    
+    # Размеры поля
+    xsize(328)  
+    ysize(40)          # Высота поля
+    
+    # Дополнительные параметры
+    focus_mask True      # Маска фокуса
+    
+    # Состояния
+    hover_background "#00c3ff"  # Цвет фона при наведении
+    idle_background "#0004ff"   # Цвет фона в обычном состоянии
+
+style red_input:
+    background "#ff0000"
+    foreground "#ffffff"
+    caret "#000000"
+    xsize 150
+    ysize 30
+    xpadding 5
+    ypadding 5
+
+style green_input:
+    background "#00ff00"
+    foreground "#000000"
+    caret "#ffffff"
+    xsize 180
+    ysize 35
+    xpadding 8
+    ypadding 8
+
+style blue_input:
+    background "#0000ff"
+    foreground "#ffffff"
+    caret "#ffff00"
+    xsize 220
+    ysize 40
+    xpadding 12
+    ypadding 12
+
+# Переменные для хранения введенного текста и состояния
+default user_text = ""
+default limited_text = ""
+default password_text = ""
+default readonly_text = "Это поле нельзя редактировать"
+default aligned_text = ""
+default prefix_text = ""
+default suffix_text = ""
+default allowed_text = ""
+default excluded_text = ""
+default pixel_width_text = ""
+default copypaste_text = ""
+default multiline_text = ""
+default prompt_text = ""
+default input_active = False
+default current_screen = None  # Переменная для отслеживания текущего экрана
+screen simple_input_screen():
+    modal True
+    
+    frame:
+        xysize(100,100)
+        add "images/Group 2 (1).png" ypos(-6) xpos(-6)
+        vbox:
+            xpos(37)
+            ypos(450)
+            button:
+                action ToggleVariable("input_active")
+                
+                frame:
+                    background "#ffffff"
+                    padding (10, 5)
+                    xsize 300
+                    
+                    if input_active:
+                        input:
+                            value VariableInputValue("user_text", default=True, returnable=True)
+                            default "Нажмите чтобы ввести текст..."
+                            xalign 0.5
+                            size 24
+                            style "custom_input"
+                    else:
+                        text (user_text if user_text else "Введите ваше имя"):
+                            xalign 0.5
+                            size 24
+                            color "#C2A1C7"
+
+            textbutton "Готово":
+                action Return()
+                xalign 0.5
+                text_color "#ffffff"
+                text_size 20
+                background "#C2A1C7"
+                hover_background "#d3b2d8"
+                padding (20, 10)
 
 screen input(prompt):
     style_prefix "input"
