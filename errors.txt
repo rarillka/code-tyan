@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 235: expected 'simple_expression' not found.
-    ysize          
-                   ^
+File "game/script.rpy", line 172: expected statement.
+    no
+      ^
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Sun Mar 16 15:05:48 2025
+Mon Mar 17 17:52:50 2025
