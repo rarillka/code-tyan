@@ -15,8 +15,11 @@ init python:
             renpy.music.stop(channel="sound")
 
     
+define n_nvl = Character("Nighten", kind=nvl, image="nighten", callback=Phone_SendSound)
+define e_nvl = Character("Eileen", kind=nvl, callback=Phone_ReceiveSound)
 
 # Определение персонажей игры.
+
 define pc = Character("Пай-чан", callback=pychan_voice, color="#d3c612")
 define mc = Character("", callback=mc_voice, color="#000")
 define k = Character("KI11K4", color="#00cc00")
@@ -169,6 +172,16 @@ label start:
     call screen simple_input_screen 
     show screen workingscreen
     "[user_text]" 
-    "[user_text], у тебя отвратительный вкус в играх, раз ты играешь в это"
+    window hide
+    $ renpy.pause()
+    "[user_text], у тебя отвратительный вкус в играх, раз ты играешь в это"  
+    
+    # How this scene is implemented:
+    #nvl_narrator "Nighten added Eileen to the group"
+    #n_nvl e2m2 "Hey! Welcome to the demo Eileen!"
+    #e_nvl "who's this?"
+    #n_nvl e2m1 "haha, silly you"
+    #n_nvl e1m2 "We talked about showing off the phone the other day, remember?"
+    #e_nvl "it's today? {image=emoji/fear.png}"
 
     return
