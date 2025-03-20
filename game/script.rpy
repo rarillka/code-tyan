@@ -167,7 +167,7 @@ label start:
     #нужно добавить картинок и разнообразить текст потому что повествование идёт слишклм быстро и скомканно
 
     call screen simple_input_screen 
-    call screen workingscreen
+    show screen workingscreen
     "[user_text]" 
     "[user_text], у тебя отвратительный вкус в играх, раз ты играешь в это"
 
