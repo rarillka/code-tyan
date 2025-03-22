@@ -177,11 +177,11 @@ label start:
     "[user_text], у тебя отвратительный вкус в играх, раз ты играешь в это"  
     
     # How this scene is implemented:
-    #nvl_narrator "Nighten added Eileen to the group"
-    #n_nvl e2m2 "Hey! Welcome to the demo Eileen!"
-    #e_nvl "who's this?"
-    #n_nvl e2m1 "haha, silly you"
-    #n_nvl e1m2 "We talked about showing off the phone the other day, remember?"
-    #e_nvl "it's today? {image=emoji/fear.png}"
+    nvl_narrator "Nighten added Eileen to the group"
+    n_nvl e2m2 "Hey! Welcome to the demo Eileen!"
+    e_nvl "who's this?"
+    n_nvl e2m1 "haha, silly you"
+    n_nvl e1m2 "We talked about showing off the phone the other day, remember?"
+    e_nvl "it's today? {image=emoji/fear.png}"
 
     return

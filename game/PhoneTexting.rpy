@@ -59,7 +59,7 @@ screen PhoneDialogue(dialogue, items=None):
                             frame:
                                 background Solid("#f1f6fe")
                                 foreground None
-                                xysize (500,120)
+                                xysize (1000,120)
 
                                 text i.caption:
                                     align (0.5,0.5)
@@ -79,7 +79,7 @@ screen nvl_phonetext(dialogue,items):
             text d.what:
                     xalign 0.5
                     ypos 0.0
-                    xsize 350
+                    xsize 650
                     text_align 0.5
                     italic True
                     size 40
@@ -125,7 +125,7 @@ screen nvl_phonetext(dialogue,items):
                         
 
                         background Frame(message_frame, 23,23,23,23)
-                        xsize 750
+                        # xsize 750
 
                         if d.current and len(items)==0:
                             if d.who == MC_Name:
@@ -158,19 +158,19 @@ style phoneFrame_frame:
     background "phone_background.png"
     foreground "phone_foreground.png"
     
-    #yfill True
-    #xfill True
-    ysize 815
-    xsize 495
+    yfill True
+    xfill True
+    # ysize 815
+    # xsize 495
 
     padding (20,0)
 
 
 style phoneFrame_viewport:
-    #yfill True
-    #xfill True
+    yfill True
+    xfill True
 
-    yoffset -20
+    # yoffset -20
 
 style phoneFrame_vbox:
     spacing 10
