@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 177: expected 'image_name_component' not found.
-    hide
-        ^
+File "game/PhoneTexting.rpy", line 166: expected statement.
+    padding (20,0)
+                  ^
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Thu Mar 20 18:27:09 2025
+Sat Mar 22 20:49:05 2025

@@ -125,7 +125,7 @@ screen nvl_phonetext(dialogue,items):
                         
 
                         background Frame(message_frame, 23,23,23,23)
-                        # xsize 750
+                        xsize 750
 
                         if d.current and len(items)==0:
                             if d.who == MC_Name:
@@ -155,13 +155,13 @@ screen nvl_phonetext(dialogue,items):
 style phoneFrame is default
 
 style phoneFrame_frame:
-    background "phone_background.png"
-    foreground "phone_foreground.png"
+    #background "phone_background.png"
+    #foreground "phone_foreground.png"
     
-    yfill True
-    xfill True
-    # ysize 815
-    # xsize 495
+    #yfill True
+    #xfill True
+    ysize 520
+    xsize 1080
 
     padding (20,0)
 
