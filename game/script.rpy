@@ -17,7 +17,7 @@ init python:
 
     
 define n_nvl = Character("Nighten", kind=nvl, image="nighten", callback=Phone_SendSound)
-define e_nvl = Character("Eileen", kind=nvl, callback=Phone_ReceiveSound)
+define e_nvl = Character("янчик", kind=nvl, callback=Phone_ReceiveSound)
 
 # Определение персонажей игры.
 
@@ -169,19 +169,37 @@ label start:
     k "{color=#00cc00}эта сцена должна быть сильно доработана и дописана но я пока решил сосредоточится на тех. части{/color}"
     k "{color=#00cc00}если вы видите эти сообщения то вы играете в незаконченную версию игры, или же в законченную но не подчищенную версию{/color}"
     #нужно добавить картинок и разнообразить текст потому что повествование идёт слишклм быстро и скомканно
-
+    
     call screen simple_input_screen 
     show screen workingscreen
-    "[user_text]" 
-    window hide
-    "[user_text], у тебя отвратительный вкус в играх, раз ты играешь в это"  
     # How this scene is implemented:
-    
-    nvl_narrator "Nighten added Eileen to the group"
-    n_nvl e2m2 "Hey! Welcome to the demo Eileen!"
-    e_nvl "who's this?"
-    n_nvl e2m1 "haha, silly you"
-    n_nvl e1m2 "We talked about showing off the phone the other day, remember?"
-    e_nvl "it's today? {image=emoji/fear.png}"
+    $ renpy.pause(modal=True)
 
+    show window 
+    with dissolve
+    nvl_narrator "Nighten added Eileen to the group"
+    e_nvl "во, я доделал"
+    n_nvl e2m1 "неужели"
+    e_nvl "ну, почти)))))"
+    n_nvl e1m1 'всмысле "почти?"'
+    e_nvl "там есть один недочет"
+    n_nvl e2m1 "?"
+    e_nvl "я забыл прописать запуск программы"
+    e_nvl "ну точнее не забыл"
+    e_nvl "мне просто лень было"
+    n_nvl e2m1 "чего"
+    n_nvl e2m1 "как это вообще понимать?"
+    e_nvl "ну"
+    e_nvl "увидишь)"
+    e_nvl "и вообще"
+    e_nvl "я старался, а ты почти ничего не делал"
+    e_nvl "займись хоть чем то"
+    n_nvl "ладно."
+
+
+    "опять все на мне"
+    
+    "чтож такое то. . ."
+    $ renpy.notify('Нажите на иконку "HubGit, чтобы скачать файл"')
+    "пора за работу"
     return

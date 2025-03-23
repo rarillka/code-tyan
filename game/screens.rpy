@@ -269,7 +269,7 @@ style blue_input:
     ypadding 12
 
 # Переменные для хранения введенного текста и состояния
-default user_text = ""
+default player_name = ""
 default limited_text = ""
 default password_text = ""
 default readonly_text = "Это поле нельзя редактировать"
@@ -303,13 +303,13 @@ screen simple_input_screen():
                     
                     if input_active:
                         input:
-                            value VariableInputValue("user_text", default=True, returnable=True)
+                            value VariableInputValue("player_name", default=True, returnable=True)
                             default "Нажмите чтобы ввести текст..."
                             xalign 0.5
                             size 24
                             style "custom_input"
                     else:
-                        text (user_text if user_text else "Введите ваше имя"):
+                        text (player_name if player_name else "Введите ваше имя"):
                             xalign 0.5
                             size 24
                             color "#C2A1C7"
@@ -1769,16 +1769,18 @@ style slider_slider:
 #РАБОЧИЙ СТОЛ
 
 screen workingscreen():
+        
         add "images/Frame 6.png"
         imagemap:
             ground "images./Group 14.png"
             hotspot(0, 5, 86, 90) action Show("conductor")
             pos(164, 244)
 screen conductor():
+    modal True
     add "images/ееее.png"
     imagemap:
         ground "images/Group 17.png"
-        hotspot(0, 5, 86, 90) action Show("conductor1"), SetVariable("a", True)
+        hotspot(0, 5, 86, 90) action Show("conductor1"), SetVariable("a", False)
         pos(545, 130)
     imagemap:
         ground "images/Vector.png"
@@ -1793,6 +1795,7 @@ screen conductor():
         hotspot(2, 1, 286, 64) action Show("video_conductor")
         pos(543, 560)
 screen conductor1():
+    
     add "images/Frame 45.png"
     imagemap:
         ground "images/Vector.png"

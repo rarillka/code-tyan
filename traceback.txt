@@ -1,30 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 178, in script
-    init python:
-  File "game/script.rpy", line 180, in <module>
-    renpy.pause()
-Exception: Can't add displayable during init phase.
+  File "game/script.rpy", line 179, in script
+    $ renpy.pause(modal=True)
+  File "game/script.rpy", line 179, in <module>
+    $ renpy.pause(modal=True)
+NameError: name 'Tru' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 178, in script
-    init python:
+  File "game/script.rpy", line 179, in script
+    $ renpy.pause(modal=True)
   File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 823, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\python.py", line 1178, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/script.rpy", line 180, in <module>
-    renpy.pause()
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\exports.py", line 1655, in pause
-    renpy.ui.saybehavior(afm=afm)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ui.py", line 478, in __call__
-    raise Exception("Can't add displayable during init phase.")
-Exception: Can't add displayable during init phase.
+  File "game/script.rpy", line 179, in <module>
+    $ renpy.pause(modal=True)
+NameError: name 'Tru' is not defined
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.2.3.24061702
 code tyan 1.0
-Sun Mar 23 10:49:32 2025
+Sun Mar 23 17:49:14 2025

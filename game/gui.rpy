@@ -33,7 +33,7 @@ define gui.idle_color = '#888888'
 
 ## Small_color используется в маленьком тексте, который должен быть ярче/темнее,
 ## для того, чтобы выделяться.
-define gui.idle_small_color = '#aaaaaa'
+define gui.idle_small_color = '#ffffff'
 
 ## Цвет, используемых в кнопках и панелях, когда они наведены.
 define gui.hover_color = '#a7a7a7'
@@ -277,7 +277,7 @@ define gui.pref_button_spacing = 0
 ## Интервал между кнопками страниц.
 define gui.page_spacing = 0
 
-## Интервал между слотами.
+## Интервал между слотами.ide
 define gui.slot_spacing = 15
 
 ## Позиция текста главного меню.

@@ -38,11 +38,12 @@ screen PhoneDialogue(dialogue, items=None):
                     use nvl_phonetext(dialogue,items)
                     null height 100
         # Button to progress
+        
         if len(items)==0: #If we don't have a menu
             button:
                 padding (0,0)
                 add Solid("#ffda4a")
-                add Transform("continue_btn.png", align=(0.5,0.5))
+                add Transform("continue_btn.png", xpos=1878, ypos=12)
                 action RollForward()
         else:
             # Phone Menu Choice
@@ -65,13 +66,12 @@ screen PhoneDialogue(dialogue, items=None):
                                     align (0.5,0.5)
                                     text_align 0.5
                                     size 60
-                            # style "nvl_button"
+                            style "nvl_button"
 
 
 # The actual messenger screen
 screen nvl_phonetext(dialogue,items):
-    style_prefix None
-
+    style_prefix "custom_input"
     $ previous_d_who = None
     for id_d, d in enumerate(dialogue):
         if d.who == None: # If it's the narrator talking
@@ -112,20 +112,21 @@ screen nvl_phonetext(dialogue,items):
                             at message_appear_icon()
                         
                 else:
-                    null width 107
+                    null width 10
 
                 vbox:
                     yalign 1.0
                     if d.who != MC_Name and previous_d_who != d.who:
                         text d.who:
-                            size 30
+                            size 20
+                    
 
                     frame:
-                        padding (20,20)
+                        padding (20,10)
                         
 
                         background Frame(message_frame, 23,23,23,23)
-                        xsize 750
+                        xsize 555
 
                         if d.current and len(items)==0:
                             if d.who == MC_Name:
@@ -155,21 +156,22 @@ screen nvl_phonetext(dialogue,items):
 style phoneFrame is default
 
 style phoneFrame_frame:
-    #background "phone_background.png"
-    #foreground "phone_foreground.png"
+    background "phone_background.png"
+    foreground "phone_foreground.png"
     
     #yfill True
     #xfill True
-    ysize 520
-    xsize 1080
-
+    ysize 1080
+    xsize 1920
     padding (20,0)
 
 
 style phoneFrame_viewport:
-    yfill True
-    xfill True
-
+    #yfill True
+    #xfill True
+    xsize 1335
+    ysize 1080
+    xpos 560
     # yoffset -20
 
 style phoneFrame_vbox:
