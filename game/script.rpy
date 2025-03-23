@@ -13,6 +13,7 @@ init python:
             renpy.music.play("voices/mc thinking.ogg", channel="sound" )
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
+    a = False
 
     
 define n_nvl = Character("Nighten", kind=nvl, image="nighten", callback=Phone_SendSound)
@@ -173,10 +174,9 @@ label start:
     show screen workingscreen
     "[user_text]" 
     window hide
-    $ renpy.pause()
     "[user_text], у тебя отвратительный вкус в играх, раз ты играешь в это"  
-    
     # How this scene is implemented:
+    
     nvl_narrator "Nighten added Eileen to the group"
     n_nvl e2m2 "Hey! Welcome to the demo Eileen!"
     e_nvl "who's this?"

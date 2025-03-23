@@ -1,24 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 175, in script
-    n_nvl e2m2 "Hey! Welcome to the demo Eileen!"
-Exception: Sayer 'n_nvl' is not defined.
+  File "game/script.rpy", line 178, in script
+    init python:
+  File "game/script.rpy", line 180, in <module>
+    renpy.pause()
+Exception: Can't add displayable during init phase.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 175, in script
-    n_nvl e2m2 "Hey! Welcome to the demo Eileen!"
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 2560, in execute
-    Say.execute(self)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 575, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 464, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who)
-Exception: Sayer 'n_nvl' is not defined.
+  File "game/script.rpy", line 178, in script
+    init python:
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 823, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\python.py", line 1178, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/script.rpy", line 180, in <module>
+    renpy.pause()
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\exports.py", line 1655, in pause
+    renpy.ui.saybehavior(afm=afm)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ui.py", line 478, in __call__
+    raise Exception("Can't add displayable during init phase.")
+Exception: Can't add displayable during init phase.
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.2.3.24061702
 code tyan 1.0
-Thu Mar 20 18:13:08 2025
+Sun Mar 23 10:49:32 2025

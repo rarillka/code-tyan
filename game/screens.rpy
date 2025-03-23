@@ -1778,7 +1778,7 @@ screen conductor():
     add "images/ееее.png"
     imagemap:
         ground "images/Group 17.png"
-        hotspot(0, 5, 86, 90) action Show("conductor1")
+        hotspot(0, 5, 86, 90) action Show("conductor1"), SetVariable("a", True)
         pos(545, 130)
     imagemap:
         ground "images/Vector.png"

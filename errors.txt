@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/PhoneTexting.rpy", line 166: expected statement.
-    padding (20,0)
-                  ^
+File "game/script.rpy", line 189: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    e_nvl "it's today? {image=emoji/fear.png}"
+    ^
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Sat Mar 22 20:49:05 2025
+Sun Mar 23 10:51:54 2025
