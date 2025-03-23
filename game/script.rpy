@@ -178,7 +178,8 @@ label start:
     show window 
     with dissolve
     nvl_narrator "Nighten added Eileen to the group"
-    e_nvl "во, я доделал"
+    e_nvl "я доделал"
+    e_nvl "можешь пуллить с ХитГаба"
     n_nvl e2m1 "неужели"
     e_nvl "ну, почти)))))"
     n_nvl e1m1 'всмысле "почти?"'
@@ -197,9 +198,10 @@ label start:
     n_nvl "ладно."
 
 
-    "опять все на мне"
+    "Опять все на мне"
     
-    "чтож такое то. . ."
+    "Что ж такое то. . ."
     $ renpy.notify('Нажите на иконку "HubGit, чтобы скачать файл"')
-    "пора за работу"
+    with Dissolve(1.0)
+    "Пора за работу"
     return
