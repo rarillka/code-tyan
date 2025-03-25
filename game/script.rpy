@@ -13,7 +13,7 @@ init python:
             renpy.music.play("voices/mc thinking.ogg", channel="sound" )
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
-    a = False
+    a = True
 
     
 define n_nvl = Character("Nighten", kind=nvl, image="nighten", callback=Phone_SendSound)
@@ -174,9 +174,20 @@ label start:
     show screen workingscreen
     # How this scene is implemented:
     $ renpy.pause(modal=True)
-
+    
     show window 
     with dissolve
+
+
+    "Опять все на мне"
+    
+    "Что ж такое то. . ."
+    $ renpy.notify('Нажите на иконку "HubGit, чтобы скачать файл"')
+    with Dissolve(1.0)
+    "Пора за работу"
+    return
+
+label chat:
     nvl_narrator "Nighten added Eileen to the group"
     e_nvl "я доделал"
     e_nvl "можешь пуллить с ХитГаба"
@@ -196,12 +207,5 @@ label start:
     e_nvl "я старался, а ты почти ничего не делал"
     e_nvl "займись хоть чем то"
     n_nvl "ладно."
-
-
-    "Опять все на мне"
     
-    "Что ж такое то. . ."
-    $ renpy.notify('Нажите на иконку "HubGit, чтобы скачать файл"')
-    with Dissolve(1.0)
-    "Пора за работу"
     return
