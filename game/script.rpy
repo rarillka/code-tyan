@@ -173,8 +173,7 @@ label start:
     call screen simple_input_screen 
     show screen workingscreen
     # How this scene is implemented:
-    $ renpy.pause(modal=True)
-    
+    jump beforechat
     show window 
     with dissolve
 
@@ -186,6 +185,9 @@ label start:
     with Dissolve(1.0)
     "Пора за работу"
     return
+label beforechat:
+    $ _dismiss_pause = False
+    $ renpy.pause(modal=True)
 
 label chat:
     nvl_narrator "Nighten added Eileen to the group"
@@ -207,5 +209,17 @@ label chat:
     e_nvl "я старался, а ты почти ничего не делал"
     e_nvl "займись хоть чем то"
     n_nvl "ладно."
-    
     return
+
+label afterchat:
+    show screen workingscreen
+    show window 
+    with dissolve
+
+
+    "Опять все на мне"
+    
+    "Что ж такое то. . ."
+    $ renpy.notify('Нажите на иконку "HubGit, чтобы скачать файл  (иконка будет добавлена позже)"')
+    with Dissolve(1.0)
+    "Пора за работу"

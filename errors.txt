@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 210: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    $ a=False
-    ^
+File "game/script.rpy", line 189: invalid syntax
+    _skipping = True $ _dismiss_pause = True
+                      ^
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Tue Mar 25 22:06:51 2025
+Fri Mar 28 11:41:03 2025
