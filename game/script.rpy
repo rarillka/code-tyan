@@ -8,9 +8,14 @@ init python:
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
 
-    def mc_voice(event, **kwargs):
+    def mc_thinking(event, **kwargs):
         if event == "show":
             renpy.music.play("voices/mc thinking.ogg", channel="sound" )
+        elif event == "slow_done" or event == "end":
+            renpy.music.stop(channel="sound")
+    def mc_speaking(event, **kwargs):
+        if event == "show":
+            renpy.music.play("voices/mc general.ogg", channel="sound" )
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
     a = True
@@ -22,7 +27,9 @@ define e_nvl = Character("янчик", kind=nvl, callback=Phone_ReceiveSound)
 # Определение персонажей игры.
 
 define pc = Character("Пай-чан", callback=pychan_voice, color="#d3c612")
-define mc = Character("", callback=mc_voice, color="#000")
+define mc = Character("", callback=mc_thinking, color="#000")
+define alexa = Character('Голосовой помочник "Алекса"', callback=mc_thinking, color="#a9d1ff")
+define mcwn = Character("[player_name]",callback=mc_speaking, color="#f1eff8")
 define k = Character("KI11K4", color="#00cc00")
 # Вместо использования оператора image можете просто
 # складывать все ваши файлы изображений в папку images.
@@ -173,7 +180,12 @@ label start:
     call screen simple_input_screen 
     show screen workingscreen
     # How this scene is implemented:
-    jump beforechat
+    'Кажется мой "коллега" что то написал..'
+    "Я так устал, даже на кнопочки нажимать не хочется"
+    "Эхх.."
+    mcwn 'Алекса, открой чат с контактом "янчик"'
+    alexa 'Выполняю.'
+    jump chat
     show window 
     with dissolve
 
@@ -185,30 +197,43 @@ label start:
     with Dissolve(1.0)
     "Пора за работу"
     return
-label beforechat:
-    $ _dismiss_pause = False
-    $ renpy.pause(modal=True)
+
 
 label chat:
-    nvl_narrator "Nighten added Eileen to the group"
-    e_nvl "я доделал"
-    e_nvl "можешь пуллить с ХитГаба"
-    n_nvl e2m1 "неужели"
-    e_nvl "ну, почти)))))"
-    n_nvl e1m1 'всмысле "почти?"'
-    e_nvl "там есть один недочет"
-    n_nvl e2m1 "?"
-    e_nvl "я забыл прописать запуск программы"
-    e_nvl "ну точнее не забыл"
-    e_nvl "мне просто лень было"
-    n_nvl e2m1 "чего"
-    n_nvl e2m1 "как это вообще понимать?"
-    e_nvl "ну"
-    e_nvl "увидишь)"
-    e_nvl "и вообще"
-    e_nvl "я старался, а ты почти ничего не делал"
-    e_nvl "займись хоть чем то"
-    n_nvl "ладно."
+    if renpy.seen_label("chat")!=True:
+
+        nvl_narrator "cuhariki"
+        e_nvl "я доделал"
+        e_nvl "можешь пуллить с ХитГаба"
+        n_nvl e2m1 "неужели"
+        e_nvl "ну, почти)))))"
+        n_nvl e1m1 'всмысле "почти?"'
+        e_nvl "там есть один недочет"
+        n_nvl e2m1 "?"
+        e_nvl "я забыл прописать запуск программы"
+        e_nvl "ну точнее не забыл"
+        e_nvl "мне просто лень было"
+        n_nvl e2m1 "чего"
+        n_nvl e2m1 "как это вообще понимать?"
+        e_nvl "ну"
+        e_nvl "увидишь)"
+        e_nvl "и вообще"
+        e_nvl "я старался, а ты почти ничего не делал"
+        e_nvl "займись хоть чем то"
+        n_nvl "ладно."
+    else:
+        nvl_narrator "cuhariki"
+        e_nvl "Привет"
+        e_nvl "А ты не хочешь немного сухариков...?"
+        e_nvl "Сухариков ни хочишь? Чуть чуть..."
+        e_nvl "Сухариков... купить...?"
+        e_nvl "Вкусные сухарики..."
+        e_nvl "Сухарики супер...сухарики хочишь..?"
+        e_nvl "Хочишь купить сухарики...?"
+        e_nvl "А? Я тебя тут спрашив.."
+        n_nvl e1m1 "Я НЕ ПОНИМАЮ!"
+        e_nvl ""
+
     return
 
 label afterchat:

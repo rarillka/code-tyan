@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 189: invalid syntax
-    _skipping = True $ _dismiss_pause = True
-                      ^
+File "game/script.rpy", line 32: invalid syntax
+    Character("[player_name]",, color="#4e3f83")
+                               ^
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Fri Mar 28 11:41:03 2025
+Sat Mar 29 21:21:28 2025
