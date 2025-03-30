@@ -1772,7 +1772,7 @@ screen workingscreen():
         add "images/Frame 6.png"
         imagemap:
             ground "images./Group 14.png"
-            hotspot(0, 5, 86, 90) action [ui.callsinnewcontext("chat")]  #Jump("chat") #Show("conductor"), 
+            hotspot(0, 5, 86, 90) action [ui.callsinnewcontext("chat1")]  #Jump("chat") #Show("conductor"), 
             pos(164, 244)
 screen conductor():
     modal True
