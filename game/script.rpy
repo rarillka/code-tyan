@@ -177,8 +177,9 @@ label start:
     k "{color=#00cc00}если вы видите эти сообщения то вы играете в незаконченную версию игры, или же в законченную но не подчищенную версию{/color}"
     #нужно добавить картинок и разнообразить текст потому что повествование идёт слишклм быстро и скомканно
     
-    call screen simple_input_screen 
+    
     show screen workingscreen
+    call screen simple_input_screen 
     # How this scene is implemented:
     'Кажется мой "коллега" что то написал..'
     "Я так устал, даже на кнопочки нажимать не хочется"
@@ -186,13 +187,7 @@ label start:
     mcwn 'Алекса, открой чат с контактом "янчик"'
     alexa 'Выполняю.'
     call chat
-    show window 
-    with dissolve
-
-
-    "Опять все на мне"
-    
-    "Что ж такое то. . ."
+   
     $ renpy.notify('Нажите на иконку "HubGit, чтобы скачать файл  (иконка будет добавлена позже)"')
     with Dissolve(1.0)
     "Пора за работу"
@@ -236,15 +231,8 @@ label chat1:
 
     return
 
-label afterchat:
-    show screen workingscreen
-    show window 
-    with dissolve
-
-
-    "Опять все на мне"
-    
-    "Что ж такое то. . ."
     $ renpy.notify('Нажите на иконку "HubGit, чтобы скачать файл  (иконка будет добавлена позже)"')
     with Dissolve(1.0)
     "Пора за работу"
+
+    show screen workingscreen

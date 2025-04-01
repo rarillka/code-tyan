@@ -1680,7 +1680,7 @@ screen quick_menu():
             xalign 0.5
             yalign 1.0
 
-            textbutton _("Назад") action Rollback()
+            textbutton _("Назад") action Rollback() 
             textbutton _("Пропуск") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Авто") action Preference("auto-forward", "toggle")
             textbutton _("Меню") action ShowMenu()
@@ -1772,8 +1772,13 @@ screen workingscreen():
         add "images/Frame 6.png"
         imagemap:
             ground "images./Group 14.png"
-            hotspot(0, 5, 86, 90) action [ui.callsinnewcontext("chat1")]  #Jump("chat") #Show("conductor"), 
+            hotspot(0, 5, 86, 90) action Show("conductor")  
             pos(164, 244)
+        imagemap:
+            ground "images/Group 16.png"
+            hotspot(0, 5, 86, 90) action [ui.callsinnewcontext("chat1")]   
+            pos(46, 358)
+
 screen conductor():
     modal True
     add "images/ееее.png"
