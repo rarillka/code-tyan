@@ -1,30 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 227, in script
-    e_nvl m1"А ты не хочешь немного сухариков...?"
-Exception: Say has image attributes ('m1',), but there's no image tag associated with the speaking character.
+  File "game/script.rpy", line 192, in script
+    $ re
+  File "game/script.rpy", line 192, in <module>
+    $ re
+NameError: name 're' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 227, in script
-    e_nvl m1"А ты не хочешь немного сухариков...?"
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 2560, in execute
-    Say.execute(self)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 615, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\exports.py", line 1494, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\character.py", line 1332, in __call__
-    old_attr_state = self.handle_say_attributes(False, interact)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\character.py", line 1151, in handle_say_attributes
-    if self.resolve_say_attributes(predicting, attrs):
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\character.py", line 1077, in resolve_say_attributes
-    raise Exception("Say has image attributes %r, but there's no image tag associated with the speaking character." % (attrs,))
-Exception: Say has image attributes ('m1',), but there's no image tag associated with the speaking character.
+  File "game/script.rpy", line 192, in script
+    $ re
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 823, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\python.py", line 1178, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/script.rpy", line 192, in <module>
+    $ re
+NameError: name 're' is not defined
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.2.3.24061702
 code tyan 1.0
-Sat Mar 29 21:31:13 2025
+Sat Apr  5 08:46:17 2025

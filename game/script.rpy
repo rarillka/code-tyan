@@ -178,8 +178,9 @@ label start:
     #нужно добавить картинок и разнообразить текст потому что повествование идёт слишклм быстро и скомканно
     
     
-    show screen workingscreen
+    
     call screen simple_input_screen 
+    show screen workingscreen
     # How this scene is implemented:
     'Кажется мой "коллега" что то написал..'
     "Я так устал, даже на кнопочки нажимать не хочется"
@@ -187,10 +188,12 @@ label start:
     mcwn 'Алекса, открой чат с контактом "янчик"'
     alexa 'Выполняю.'
     call chat
-   
+
     $ renpy.notify('Нажите на иконку "HubGit, чтобы скачать файл  (иконка будет добавлена позже)"')
-    with Dissolve(1.0)
+
     "Пора за работу"
+    call screen workingscreen
+
     return
 
 
@@ -214,7 +217,7 @@ label chat:
     e_nvl "я старался, а ты почти ничего не делал"
     e_nvl "займись хоть чем то"
     n_nvl "ладно."
-    
+
     return
 label chat1:
     nvl_narrator "cuhariki"

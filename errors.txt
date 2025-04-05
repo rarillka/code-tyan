@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 189: end of line expected.
-    call label chat
-               ^
+File "game/script.rpy", line 196: expected 'image_name_component' not found.
+    hide
+        ^
 
-Ren'Py Version: Ren'Py 8.3.2.24090902
-Tue Apr  1 11:01:51 2025
+Ren'Py Version: Ren'Py 8.2.3.24061702
+Sat Apr  5 08:51:12 2025
