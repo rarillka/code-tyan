@@ -126,7 +126,7 @@ screen nvl_phonetext(dialogue,items):
                         
 
                         background Frame(message_frame, 23,23,23,23)
-                        xsize 555
+                        xsize 500
 
                         if d.current and len(items)==0:
                             if d.who == MC_Name:
@@ -138,7 +138,8 @@ screen nvl_phonetext(dialogue,items):
                             pos (0,0)
                             # xsize 750
                             slow_cps False
-                            size 45
+                            size 35
+                            font "fonts/Inter-VariableFont_opsz,wght.ttf"
                             
 
                             if d.who == MC_Name :
@@ -147,7 +148,7 @@ screen nvl_phonetext(dialogue,items):
                                 xanchor 1.0
                                 xpos 1.0
                             else:
-                                color "#000"
+                                color "#FFF"
 
                                 
                             id d.what_id

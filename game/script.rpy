@@ -1,6 +1,22 @@
 ﻿# Вы можете расположить сценарий своей игры в этом файле.
 
 init python:
+    # Import only the datetime class from the datetime module     
+    from datetime import datetime            
+    # Function to get current date and time     
+    def afficher_date_heure():         
+        # Try to execute the following code         
+        try:             
+            # Get the current date and time             
+            now = datetime.now()               
+            # Format the date and time as a string             
+            current_time = now.strftime("%H:%M")             
+            # Return the formatted date and time             
+            return current_time                    
+        # If an error occurs, handle it here         
+        except Exception as e:             
+            # Return an error message             
+            return f"Error: {e}"
     _preferences.set_volume('sound', 0.5)
     def pychan_voice(event, **kwargs):
         if event == "show":

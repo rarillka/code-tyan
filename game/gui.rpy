@@ -62,7 +62,7 @@ define gui.interface_text_color = '#ffffff'
 define gui.text_font = "Jura-VariableFont_wght.ttf"
 
 ## Шрифт, используемый именами персонажей.
-define gui.name_text_font = "Jura-VariableFont_wght.ttf"
+define gui.name_text_font = "Inter-VariableFont_opsz,wght.ttf"
 
 ## Шрифт, используемый текстом вне игры.
 define gui.interface_text_font = "Jura-VariableFont_wght.ttf"
@@ -163,7 +163,7 @@ define gui.button_borders = Borders(6, 6, 6, 6)
 define gui.button_tile = False
 
 ## Шрифт, используемый кнопкой.
-define gui.button_text_font = gui.interface_text_font
+define gui.button_text_font = "fonts/Inter-VariableFont_opsz,wght.ttf"
 
 ## Размер текста, используемый кнопкой.
 define gui.button_text_size = gui.interface_text_size

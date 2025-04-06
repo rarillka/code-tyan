@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 196: expected 'image_name_component' not found.
-    hide
-        ^
+File "game/gui.rpy", line 166: expected expression
+    define gui.button_text_font = 
+                                  ^
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Sat Apr  5 08:51:12 2025
+Sun Apr  6 18:35:33 2025

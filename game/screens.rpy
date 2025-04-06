@@ -268,6 +268,14 @@ style blue_input:
     xpadding 12
     ypadding 12
 
+style time:
+    font "fonts/Inter-VariableFont_opsz,wght.ttf"  # Шрифт
+    size 96               # Размер шрифта
+    antialias True  
+    xpos 54
+    ypos 27
+
+default current_time = afficher_date_heure()  
 # Переменные для хранения введенного текста и состояния
 default player_name = ""
 default limited_text = ""
@@ -1778,6 +1786,8 @@ screen workingscreen():
             ground "images/Group 16.png"
             hotspot(0, 5, 86, 90) action [ui.callsinnewcontext("chat1")]   
             pos(46, 358)
+
+        text "[current_time]" style "time"
 
 screen conductor():
     modal True
