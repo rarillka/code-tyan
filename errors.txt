@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/gui.rpy", line 166: expected expression
-    define gui.button_text_font = 
-                                  ^
+File "game/script.rpy", line 194: expected statement.
+    WINDWO
+          ^
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Sun Apr  6 18:35:33 2025
+Mon Apr  7 18:27:07 2025

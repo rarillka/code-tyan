@@ -26,17 +26,17 @@ define config.check_conflicting_properties = True
 ## Цвета текста в интерфейсе.
 
 ## Акцентный цвет используется в заголовках и подчёркнутых текстах.
-define gui.accent_color = '#C2A1C7'
+define gui.accent_color = '#d47cd0'
 
 ## Цвет, используемый в текстовой кнопке, когда она не выбрана и не наведена.
-define gui.idle_color = '#888888'
+define gui.idle_color = '#e4c2d8'
 
 ## Small_color используется в маленьком тексте, который должен быть ярче/темнее,
 ## для того, чтобы выделяться.
 define gui.idle_small_color = '#ffffff'
 
 ## Цвет, используемых в кнопках и панелях, когда они наведены.
-define gui.hover_color = '#a7a7a7'
+define gui.hover_color = '#e294e9'
 
 ## Цвет, используемый текстовой кнопкой, когда она выбрана, но не наведена.
 ## Кнопка может быть выбрана, если это текущий экран или текущее значение
@@ -59,19 +59,19 @@ define gui.interface_text_color = '#ffffff'
 ## Шрифты и их размеры #########################################################
 
 ## Шрифт, используемый внутриигровым текстом.
-define gui.text_font = "Jura-VariableFont_wght.ttf"
+define gui.text_font = "PressStart2P-Regular.ttf"
 
 ## Шрифт, используемый именами персонажей.
-define gui.name_text_font = "Inter-VariableFont_opsz,wght.ttf"
+define gui.name_text_font = "PressStart2P-Regular.ttf"
 
 ## Шрифт, используемый текстом вне игры.
 define gui.interface_text_font = "Jura-VariableFont_wght.ttf"
 
 ## Размер нормального текста диалога.
-define gui.text_size = 35
+define gui.text_size = 25
 
 ## Размер имён персонажей.
-define gui.name_text_size = 45
+define gui.name_text_size = 23
 
 ## Размер текста в пользовательском интерфейсе.
 define gui.interface_text_size = 33
@@ -108,8 +108,8 @@ define gui.textbox_yalign = 1.0
 ## Местоположение имени говорящего персонажа по отношению к текстовому окну.
 ## Это могут быть целые значения в пикселях слева и сверху от начала окна или
 ## процентное отношение, например, 0.5 для центрирования.
-define gui.name_xpos = 360
-define gui.name_ypos = 0
+define gui.name_xpos = 180
+define gui.name_ypos = -58
 
 ## Горизонтальное выравнивание имени персонажа. Это может быть 0.0 для
 ## левоориентированного, 0.5 для центрированного и 1.0 для правоориентированного
@@ -133,11 +133,11 @@ define gui.namebox_tile = False
 ## Размещение диалога по отношению к текстовому окну. Это могут быть целые
 ## значения в пикселях слева и сверху от текстового окна или процентное
 ## отношение, например, 0.5 для центрирования.
-define gui.dialogue_xpos = 402
-define gui.dialogue_ypos = 75
+define gui.dialogue_xpos = 175
+define gui.dialogue_ypos = 50
 
 ## Максимальная ширина текста диалога в пикселях.
-define gui.dialogue_width = 1116
+define gui.dialogue_width = 1600
 
 ## Горизонтальное выравнивание текста диалога. Это может быть 0.0 для
 ## левоориентированного, 0.5 для центрированного и 1.0 для правоориентированного

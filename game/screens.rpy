@@ -312,12 +312,13 @@ screen simple_input_screen():
                     if input_active:
                         input:
                             value VariableInputValue("player_name", default=True, returnable=True)
-                            default "Нажмите чтобы ввести текст..."
+                            default "Нажмите чтобы ввести текст..." 
                             xalign 0.5
                             size 24
                             style "custom_input"
                     else:
                         text (player_name if player_name else "Введите ваше имя"):
+                            font "DejaVuSans.ttf"
                             xalign 0.5
                             size 24
                             color "#C2A1C7"
@@ -1798,32 +1799,36 @@ screen conductor():
         pos(545, 130)
     imagemap:
         ground "images/Vector.png"
-        hotspot(2, 0, 22, 19) action Hide("conductor")
+        hover "images/Vector hover.png"
+        hotspot(2, 0, 22, 19) action Hide("conductor"), Hide("conductor1")
         pos(916, 7)
     imagemap:
         ground "images/Group 21.png"
-        hotspot(2, 1, 286, 64) action Show("musik_1")
+        hotspot(2, 1, 286, 64) action Show("musik_1"), Hide("conductor1")
         pos(541, 470)
     imagemap:
         ground "images/Group 22.png"
-        hotspot(2, 1, 286, 64) action Show("video_conductor")
+        hotspot(2, 1, 286, 64) action Show("video_conductor"), Hide("conductor1")
         pos(543, 560)
 screen conductor1():
     
     add "images/Frame 45.png"
     imagemap:
         ground "images/Vector.png"
+        hover "images/Vector hover.png"
         hotspot(2, 0, 25, 20) action Hide("conductor1")
         pos(907, 12)
 screen musik_1():
     add "images/Frame 12.png"
     imagemap:
         ground "images/Vector.png"
+        hover "images/Vector hover.png"
         hotspot(2, 0, 22, 19) action Hide("musik_1")
         pos(925, 7)
 screen video_conductor():
     add "images/Frame 13.png"
     imagemap:
         ground "images/Vector.png"
+        hover "images/Vector hover.png"
         hotspot(2, 0, 22, 19) action Hide("video_conductor")
         pos(925, 7)

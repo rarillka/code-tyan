@@ -43,10 +43,10 @@ define e_nvl = Character("янчик", kind=nvl, callback=Phone_ReceiveSound)
 # Определение персонажей игры.
 
 define pc = Character("Пай-чан", callback=pychan_voice, color="#d3c612")
-define mc = Character("", callback=mc_thinking, color="#000")
-define alexa = Character('Голосовой помочник "Алекса"', callback=mc_thinking, color="#a9d1ff")
+define mc = Character("", window_background="gui/textbox1.png", callback=mc_thinking, color="#000")
+define alexa = Character('Голосовой помочник', callback=mc_thinking, color="#ffffff")
 define mcwn = Character("[player_name]",callback=mc_speaking, color="#f1eff8")
-define k = Character("KI11K4", color="#00cc00")
+define k = Character("KI11K4", color="#b3ffb3")
 # Вместо использования оператора image можете просто
 # складывать все ваши файлы изображений в папку images.
 # Например, сцену bg room можно вызвать файлом "bg room.png",
@@ -94,7 +94,7 @@ label start:
 """
     
 
-    play music "music/Comfortable Mystery 4.mp3" loop fadein 1.0 volume 1.5
+    play music "music/Sovereign.mp3" loop fadein 1.0 volume 10
     
     scene city 
     with Dissolve(2.5)
@@ -102,7 +102,6 @@ label start:
     with Dissolve(2.0)
 
 #ваще в этой сцене должны будут менятся фоновые картинки бат пока мы их не подобрали пусть будет вот так
-    
     "Я шел домой, иногда поглядывая вверх на огромные газовырабатывающие вышки, расположенные почти возле каждого завода и дома в районе"
 
     "Из-за них воздух становился более спиртным, и казалось, что идешь не по улице, а по пеплу, который, благодаря своим частицам и затхлому запаху, лез в глаза, вызывая небольшое покалывание"
@@ -189,10 +188,10 @@ label start:
     "И, сегодня, он должен прислать мне первую полноценную версию его разработки."
 
     "Может что-то там и работает…"
-    k "{color=#00cc00}эта сцена должна быть сильно доработана и дописана но я пока решил сосредоточится на тех. части{/color}"
-    k "{color=#00cc00}если вы видите эти сообщения то вы играете в незаконченную версию игры, или же в законченную но не подчищенную версию{/color}"
+    k "{color=#b3ffb3}эта сцена должна быть сильно доработана и дописана но я пока решил сосредоточится на тех. части{/color}"
+    k "{color=#b3ffb3}если вы видите эти сообщения то вы играете в незаконченную версию игры, или же в законченную но не подчищенную версию{/color}"
     #нужно добавить картинок и разнообразить текст потому что повествование идёт слишклм быстро и скомканно
-    
+    window hide
     
     
     call screen simple_input_screen 
@@ -205,9 +204,10 @@ label start:
     alexa 'Выполняю.'
     call chat
 
+    
+    "И опять все на мне..."
     $ renpy.notify('Нажите на иконку "HubGit, чтобы скачать файл  (иконка будет добавлена позже)"')
-
-    "Пора за работу"
+    "Ладно, пора за работу"
     call screen workingscreen
 
     return
