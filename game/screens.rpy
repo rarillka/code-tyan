@@ -1789,17 +1789,18 @@ screen workingscreen():
             pos(46, 358)
         imagemap:
             ground "images/Group 49.png"
-            hotspot(0, 5, 86, 90) action Show("hab_git")
+            hotspot(0, 5, 86, 90) action Show("hab_git") #[ui.callsinnewcontext("nthin")] 
             pos(164, 358)
 
         text "[current_time]" style "time"
 screen hab_git ():
-    modal True
+    #modal True
     drag:
         #xpos 0.25
         #ypos 0.25
-        xsize 930
+        xsize 1218 
         ysize 730
+        drag_handle (0, 0, 1.0, 30)
         drag_raise True
         draggable True
         add "images/на 2025-04-06 194728.png"
@@ -1811,44 +1812,67 @@ screen hab_git ():
             ypos(5)
 
 screen conductor():
-    modal True
-    add "images/ееее.png"
-    imagemap:
-        ground "images/Group 17.png"
-        hotspot(0, 5, 86, 90) action Show("conductor1")
-        pos(545, 130)
-    imagemap:
-        ground "images/Vector.png"
-        hover "images/Vector hover.png"
-        hotspot(2, 0, 22, 19) action Hide("conductor"), Hide("conductor1")
-        pos(916, 7)
-    imagemap:
-        ground "images/Group 21.png"
-        hotspot(2, 1, 286, 64) action Show("musik_1"), Hide("conductor1")
-        pos(541, 470)
-    imagemap:
-        ground "images/Group 22.png"
-        hotspot(2, 1, 286, 64) action Show("video_conductor"), Hide("conductor1")
-        pos(543, 560)
+    #modal True
+    drag:
+        xsize 949
+        ysize 682
+        drag_handle (0, 0, 1.0, 30)
+        drag_raise True
+        draggable True
+        add "images/ееее.png"
+        imagemap:
+            ground "images/Group 17.png"
+            hotspot(0, 5, 86, 90) action Show("conductor1")
+            pos(545, 130)
+        imagemap:
+            ground "images/Vector.png"
+            hover "images/Vector hover.png"
+            hotspot(2, 0, 22, 19) action Hide("conductor"), Hide("conductor1")
+            pos(916, 7)
+        imagemap:
+            ground "images/Group 21.png"
+            hotspot(2, 1, 286, 64) action Show("musik_1"), Hide("conductor1")
+            pos(541, 470)
+        imagemap:
+            ground "images/Group 22.png"
+            hotspot(2, 1, 286, 64) action Show("video_conductor"), Hide("conductor1")
+            pos(543, 560)
 screen conductor1():
-    
-    add "images/Frame 45.png"
-    imagemap:
-        ground "images/Vector.png"
-        hover "images/Vector hover.png"
-        hotspot(2, 0, 25, 20) action Hide("conductor1")
-        pos(907, 12)
+    drag:
+        xsize 949
+        ysize 682
+        drag_handle (0, 0, 1.0, 30)
+        drag_raise True
+        draggable True
+        add "images/Frame 45.png"
+        imagemap:
+            ground "images/Vector.png"
+            hover "images/Vector hover.png"
+            hotspot(2, 0, 25, 20) action Hide("conductor1")
+            pos(907, 12)
 screen musik_1():
-    add "images/Frame 12.png"
-    imagemap:
-        ground "images/Vector.png"
-        hover "images/Vector hover.png"
-        hotspot(2, 0, 22, 19) action Hide("musik_1")
-        pos(925, 7)
+    drag:
+        xsize 949
+        ysize 682
+        drag_handle (0, 0, 1.0, 30)
+        drag_raise True
+        draggable True
+        add "images/Frame 12.png"
+        imagemap:
+            ground "images/Vector.png"
+            hover "images/Vector hover.png"
+            hotspot(2, 0, 22, 19) action Hide("musik_1")
+            pos(925, 7)
 screen video_conductor():
-    add "images/Frame 13.png"
-    imagemap:
-        ground "images/Vector.png"
-        hover "images/Vector hover.png"
-        hotspot(2, 0, 22, 19) action Hide("video_conductor")
-        pos(925, 7)
+    drag:
+        xsize 949
+        ysize 682
+        drag_handle (0, 0, 1.0, 30)
+        drag_raise True
+        draggable True
+        add "images/Frame 13.png"
+        imagemap:
+            ground "images/Vector.png"
+            hover "images/Vector hover.png"
+            hotspot(2, 0, 22, 19) action Hide("video_conductor")
+            pos(925, 7)

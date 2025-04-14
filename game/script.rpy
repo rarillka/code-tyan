@@ -196,6 +196,7 @@ label start:
     
     call screen simple_input_screen 
     show screen workingscreen
+    hide room
     # How this scene is implemented:
     'Кажется мой "коллега" что то написал..'
     "Я так устал, даже на кнопочки нажимать не хочется"
@@ -255,3 +256,10 @@ label chat1:
     "Пора за работу"
 
     show screen workingscreen
+
+
+label nthin:
+    show screen workingscreen
+    ",bla bla bla"
+    "ble ble ble"
+    return
