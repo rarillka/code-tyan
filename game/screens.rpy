@@ -1795,7 +1795,6 @@ screen workingscreen():
         text "[current_time]" style "time"
 screen hab_git ():
     modal True
-
     drag:
         #xpos 0.25
         #ypos 0.25
