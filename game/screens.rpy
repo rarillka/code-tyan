@@ -1787,8 +1787,29 @@ screen workingscreen():
             ground "images/Group 16.png"
             hotspot(0, 5, 86, 90) action [ui.callsinnewcontext("chat1")]   
             pos(46, 358)
+        imagemap:
+            ground "images/Group 49.png"
+            hotspot(0, 5, 86, 90) action Show("hab_git")
+            pos(164, 358)
 
         text "[current_time]" style "time"
+screen hab_git ():
+    modal True
+
+    drag:
+        #xpos 0.25
+        #ypos 0.25
+        xsize 930
+        ysize 730
+        drag_raise True
+        draggable True
+        add "images/на 2025-04-06 194728.png"
+        imagemap:
+            ground "images/hubgitclosingicon.png"
+            hover "images/hubgitclosingicon-hover.png"
+            hotspot(0, 0, 86, 90) action Hide("hab_git")
+            xpos(1218)
+            ypos(5)
 
 screen conductor():
     modal True

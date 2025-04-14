@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 194: expected statement.
-    WINDWO
-          ^
+File "game/screens.rpy", line 1811: the pos keyword argument was not given a value.
+    pos, 5)
+       ^
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Mon Apr  7 18:27:07 2025
+Mon Apr 14 17:35:09 2025

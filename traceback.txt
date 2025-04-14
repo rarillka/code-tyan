@@ -1,84 +1,72 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-After initialization, but before game start.
-  File "game/screens.rpy", line 295, in prepare_screen
-    screen simple_input_screen():
-  File "game/screens.rpy", line 295, in prepare
-    screen simple_input_screen():
-  File "game/screens.rpy", line 298, in prepare
-    frame:
-  File "game/screens.rpy", line 298, in prepare
-    frame:
-  File "game/screens.rpy", line 301, in prepare
-    vbox:
-  File "game/screens.rpy", line 301, in prepare
-    vbox:
-  File "game/screens.rpy", line 304, in prepare
-    button:
-  File "game/screens.rpy", line 304, in prepare
-    button:
-  File "game/screens.rpy", line 307, in prepare
-    frame:
-  File "game/screens.rpy", line 307, in prepare
-    frame:
-  File "game/screens.rpy", line 312, in prepare
-    if input_active:
-  File "game/screens.rpy", line 319, in prepare
-    else:
-  File "game/screens.rpy", line 320, in prepare
-    text (player_name if player_name else "Введите ваше имя" font "DejaVuSans.ttf"):
-SyntaxError: invalid syntax (game/screens.rpy, line 320)
+While running game code:
+  File "game/script.rpy", line 200, in script
+    'Кажется мой "коллега" что то написал..'
+TypeError: Value () of type <class 'tuple'> not recognized as a position.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\bootstrap.py", line 359, in bootstrap
-    renpy.main.main()
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\main.py", line 637, in main
-    run(restart)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\main.py", line 94, in run
-    renpy.display.screen.prepare_screens()
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\screen.py", line 1026, in prepare_screens
-    s.ast.prepare_screen()
-  File "game/screens.rpy", line 295, in prepare_screen
-    screen simple_input_screen():
-  File "game/screens.rpy", line 295, in prepare
-    screen simple_input_screen():
-  File "game/screens.rpy", line 298, in prepare
-    frame:
-  File "game/screens.rpy", line 298, in prepare
-    frame:
-  File "game/screens.rpy", line 301, in prepare
-    vbox:
-  File "game/screens.rpy", line 301, in prepare
-    vbox:
-  File "game/screens.rpy", line 304, in prepare
-    button:
-  File "game/screens.rpy", line 304, in prepare
-    button:
-  File "game/screens.rpy", line 307, in prepare
-    frame:
-  File "game/screens.rpy", line 307, in prepare
-    frame:
-  File "game/screens.rpy", line 312, in prepare
-    if input_active:
-  File "game/screens.rpy", line 319, in prepare
-    else:
-  File "game/screens.rpy", line 320, in prepare
-    text (player_name if player_name else "Введите ваше имя" font "DejaVuSans.ttf"):
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\py3analysis.py", line 803, in ast_eval
-    return self.ast_eval_literal(expr)[0]
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\py3analysis.py", line 785, in ast_eval_literal
-    expr = py_compile(expr, 'eval', ast_node=True)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\python.py", line 1144, in py_compile
-    raise e
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\python.py", line 1081, in py_compile
-    raise orig_e
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\python.py", line 1073, in py_compile
-    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
-SyntaxError: invalid syntax (game/screens.rpy, line 320)
+  File "game/script.rpy", line 200, in script
+    'Кажется мой "коллега" что то написал..'
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 2560, in execute
+    Say.execute(self)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 615, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\exports.py", line 1494, in say
+    who(what, *args, **kwargs)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\character.py", line 1394, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\character.py", line 1045, in do_display
+    display_say(who,
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\character.py", line 741, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 2166, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 2819, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 1353, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 486, in renpy.display.render.render_screen
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\screen.py", line 754, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\dragdrop.py", line 619, in render
+    cr = render(child, width, height, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 913, in render
+    offset = child.place(rv, 0, 0, width, height, surf)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 490, in place
+    xpos, ypos = place(width, height, surf.width, surf.height, placement)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 61, in place
+    xpos = compute_raw(xpos, width)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 226, in compute_raw
+    raise TypeError("Value {} of type {} not recognized as a position.".format(value, type(value)))
+TypeError: Value () of type <class 'tuple'> not recognized as a position.
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.2.3.24061702
 code tyan 1.0
-Mon Apr  7 17:57:11 2025
+Mon Apr 14 17:36:59 2025
