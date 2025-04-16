@@ -1,72 +1,86 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 200, in script
-    'Кажется мой "коллега" что то написал..'
-TypeError: Value () of type <class 'tuple'> not recognized as a position.
+  File "game/script.rpy", line 57, in script
+    call screen code_minigame_puzzle
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "game/minigame/mg_screen.rpy", line 30, in execute
+    screen code_minigame_puzzle(title="idk", pieces=[], objs=[], template="%v"):
+  File "game/minigame/mg_screen.rpy", line 30, in execute
+    screen code_minigame_puzzle(title="idk", pieces=[], objs=[], template="%v"):
+  File "game/minigame/mg_screen.rpy", line 42, in execute
+    frame:
+  File "game/minigame/mg_screen.rpy", line 44, in execute
+    has vbox:
+  File "game/minigame/mg_screen.rpy", line 49, in execute
+    hbox:
+  File "game/minigame/mg_screen.rpy", line 55, in execute
+    hbox:
+  File "game/minigame/mg_screen.rpy", line 59, in execute
+    button action Function(transfer_lists, from_list=submission, to_list=pieces):
+  File "game/minigame/mg_screen.rpy", line 60, in execute
+    add get_feather_icon("refresh-cw"):
+  File "game/minigame/mg_screen.rpy", line 60, in <module>
+    add get_feather_icon("refresh-cw"):
+NameError: name 'get_feather_icon' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 200, in script
-    'Кажется мой "коллега" что то написал..'
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 2560, in execute
-    Say.execute(self)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 615, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\exports.py", line 1494, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\character.py", line 1394, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\character.py", line 1045, in do_display
-    display_say(who,
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\character.py", line 741, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "game/script.rpy", line 57, in script
+    call screen code_minigame_puzzle
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 1971, in execute
+    self.call("execute")
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 1953, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\statements.py", line 349, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\exports.py", line 3420, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
   File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ui.py", line 301, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 2166, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 2819, in interact_core
-    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 1353, in draw_screen
-    surftree = renpy.display.render.render_screen(
-  File "render.pyx", line 486, in renpy.display.render.render_screen
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\screen.py", line 754, in render
-    child = renpy.display.render.render(self.child, w, h, st, at)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\dragdrop.py", line 619, in render
-    cr = render(child, width, height, st, at)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 913, in render
-    offset = child.place(rv, 0, 0, width, height, surf)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 490, in place
-    xpos, ypos = place(width, height, surf.width, surf.height, placement)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 61, in place
-    xpos = compute_raw(xpos, width)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 226, in compute_raw
-    raise TypeError("Value {} of type {} not recognized as a position.".format(value, type(value)))
-TypeError: Value () of type <class 'tuple'> not recognized as a position.
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 2688, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 431, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 431, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 431, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\screen.py", line 480, in visit_all
+    callback(self)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 2688, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\screen.py", line 697, in update
+    self.screen.function(**self.scope)
+  File "game/minigame/mg_screen.rpy", line 30, in execute
+    screen code_minigame_puzzle(title="idk", pieces=[], objs=[], template="%v"):
+  File "game/minigame/mg_screen.rpy", line 30, in execute
+    screen code_minigame_puzzle(title="idk", pieces=[], objs=[], template="%v"):
+  File "game/minigame/mg_screen.rpy", line 42, in execute
+    frame:
+  File "game/minigame/mg_screen.rpy", line 44, in execute
+    has vbox:
+  File "game/minigame/mg_screen.rpy", line 49, in execute
+    hbox:
+  File "game/minigame/mg_screen.rpy", line 55, in execute
+    hbox:
+  File "game/minigame/mg_screen.rpy", line 59, in execute
+    button action Function(transfer_lists, from_list=submission, to_list=pieces):
+  File "game/minigame/mg_screen.rpy", line 60, in execute
+    add get_feather_icon("refresh-cw"):
+  File "game/minigame/mg_screen.rpy", line 60, in <module>
+    add get_feather_icon("refresh-cw"):
+NameError: name 'get_feather_icon' is not defined
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.2.3.24061702
 code tyan 1.0
-Mon Apr 14 17:36:59 2025
+Wed Apr 16 20:21:34 2025

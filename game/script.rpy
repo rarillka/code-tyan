@@ -54,6 +54,7 @@ define k = Character("KI11K4", color="#b3ffb3")
 
 # Игра начинается здесь:
 label start:
+    #call screen code_minigame_puzzle
     python:
         _preferences.set_volume('music', 0.2)
         
@@ -98,6 +99,7 @@ label start:
     
     scene city 
     with Dissolve(2.5)
+
     $ renpy.notify("5 ноября 2041г.")
     with Dissolve(2.0)
 
