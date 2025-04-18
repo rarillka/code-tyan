@@ -226,7 +226,7 @@ init 10 python:
             return compile(code_str, '<string>', mode="exec")
 
 
-        def __init__(self, file=None, code="", bits=[], delimit="%v"):
+        def __init__(self, File=None, code="", bits=[], delimit="%v"):
             """Construct the CodeItPuzzle.
 
             Args:
@@ -239,8 +239,8 @@ init 10 python:
             self.lexer = CodeItPuzzleLexer(delimiter=self.delimiter)
             self.bits = bits
 
-            if file is not None:
-                with renpy.file(file) as fobj:
+            if File is not None:
+                with renpy.file(File) as fobj:
                     self.code_string = ''.join(fobj.readlines())
             else:
                 self.code_string = code
@@ -250,10 +250,8 @@ init 10 python:
     class CodeIt():
 
         puzzles = {
-            "oof": ("puzzles/oof.py", ["oof", "def", "return", "die"]),
             "intro": ("puzzles/intro.py", ["print"]),
-            
-            #"compile": ("puzzles/compile.py", [])
+            "compile": ("puzzles/compile.py", [])
         }
 
         def run_puzzle(self, puzzle=""):
@@ -273,14 +271,14 @@ init 10 python:
             pieces = puzzle_solv.copy()
             shuffle(pieces)
 
-            puzzle_obj = CodeItPuzzle(file=full_puzzle_loc, bits=pieces, delimit="%v")
+            puzzle_obj = CodeItPuzzle(File=full_puzzle_loc, bits=pieces, delimit="%v")
 
             while not complete:
                 submission = renpy.call_screen("code_minigame_puzzle", 
-                title=puzzle,
-                pieces=pieces,
-                objs=puzzle_obj.code_objects,
-                template=puzzle_obj.delimiter)
+                                               title=puzzle,
+                                               pieces=pieces,
+                                               objs=puzzle_obj.code_objects,
+                                               template=puzzle_obj.delimiter)
 
                 did_succeed, error = puzzle_obj.check(submission)
 
@@ -290,8 +288,8 @@ init 10 python:
 
                 if not did_succeed and error is not None:
                     renpy.call_screen("ASNotificationAlert",
-                    message="Puzzle Script Failed",
-                    withDetails = "The script for this puzzle failed due to a %s error. Please check the order of the code pieces and verify that the code works before submitting." % (error))
+                                      message="Puzzle Script Failed",
+                                      withDetails = "The script for this puzzle failed due to a %s error. Please check the order of the code pieces and verify that the code works before submitting." % (error))
                     pieces = puzzle_solv.copy()
                     shuffle(pieces)
             

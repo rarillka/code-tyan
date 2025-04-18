@@ -1,35 +1,17 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/script.rpy", line 57, in script
-    call screen code_minigame_puzzle
+While loading <renpy.display.im.Image object ('path/to/feather/icons/check-square.png') at 0x00000000054b4a60>:
+  File "game/script.rpy", line 58, in script
+    call screen code_minigame_puzzle(title="i", pieces=[1, 1], objs=[], template="%v")
   File "renpy/common/000statements.rpy", line 671, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/minigame/mg_screen.rpy", line 30, in execute
-    screen code_minigame_puzzle(title="idk", pieces=[], objs=[], template="%v"):
-  File "game/minigame/mg_screen.rpy", line 30, in execute
-    screen code_minigame_puzzle(title="idk", pieces=[], objs=[], template="%v"):
-  File "game/minigame/mg_screen.rpy", line 42, in execute
-    frame:
-  File "game/minigame/mg_screen.rpy", line 44, in execute
-    has vbox:
-  File "game/minigame/mg_screen.rpy", line 49, in execute
-    hbox:
-  File "game/minigame/mg_screen.rpy", line 55, in execute
-    hbox:
-  File "game/minigame/mg_screen.rpy", line 59, in execute
-    button action Function(transfer_lists, from_list=submission, to_list=pieces):
-  File "game/minigame/mg_screen.rpy", line 60, in execute
-    add get_feather_icon("refresh-cw"):
-  File "game/minigame/mg_screen.rpy", line 60, in <module>
-    add get_feather_icon("refresh-cw"):
-NameError: name 'get_feather_icon' is not defined
+Exception: Could not find font 'gui/font/FiraCode-Regular.ttf'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 57, in script
-    call screen code_minigame_puzzle
+  File "game/script.rpy", line 58, in script
+    call screen code_minigame_puzzle(title="i", pieces=[1, 1], objs=[], template="%v")
   File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 1971, in execute
     self.call("execute")
   File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 1953, in call
@@ -44,43 +26,75 @@ Full traceback:
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 2166, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 2688, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 431, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 431, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 431, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\screen.py", line 480, in visit_all
-    callback(self)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 2688, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\screen.py", line 491, in per_interact
-    self.update()
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\screen.py", line 697, in update
-    self.screen.function(**self.scope)
-  File "game/minigame/mg_screen.rpy", line 30, in execute
-    screen code_minigame_puzzle(title="idk", pieces=[], objs=[], template="%v"):
-  File "game/minigame/mg_screen.rpy", line 30, in execute
-    screen code_minigame_puzzle(title="idk", pieces=[], objs=[], template="%v"):
-  File "game/minigame/mg_screen.rpy", line 42, in execute
-    frame:
-  File "game/minigame/mg_screen.rpy", line 44, in execute
-    has vbox:
-  File "game/minigame/mg_screen.rpy", line 49, in execute
-    hbox:
-  File "game/minigame/mg_screen.rpy", line 55, in execute
-    hbox:
-  File "game/minigame/mg_screen.rpy", line 59, in execute
-    button action Function(transfer_lists, from_list=submission, to_list=pieces):
-  File "game/minigame/mg_screen.rpy", line 60, in execute
-    add get_feather_icon("refresh-cw"):
-  File "game/minigame/mg_screen.rpy", line 60, in <module>
-    add get_feather_icon("refresh-cw"):
-NameError: name 'get_feather_icon' is not defined
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 2819, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 1353, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 486, in renpy.display.render.render_screen
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\screen.py", line 754, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 1361, in render
+    surf = render(child,
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 1121, in render
+    surf = render(d, width - x, rh, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 1121, in render
+    surf = render(d, width - x, rh, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 1076, in render
+    surf = render(d, rw, height - y, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 1121, in render
+    surf = render(d, width - x, rh, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 1076, in render
+    surf = render(d, rw, height - y, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\behavior.py", line 968, in render
+    rv = super(Button, self).render(width, height, st, at)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 1361, in render
+    surf = render(child,
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\text\text.py", line 2276, in render
+    virtual_layout = Layout(self, width, height, renders, drawable_res=False, size_only=True)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\text\text.py", line 676, in __init__
+    glyphs = ts.glyphs(s, self)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\text\text.py", line 268, in glyphs
+    fo = font.get_font(self.font, self.size, self.bold, self.italic, 0, self.antialias, self.vertical, self.hinting, layout.oversample, self.shaper, self.instance, self.axis)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\text\font.py", line 745, in get_font
+    face = load_face(fn, shaper)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\text\font.py", line 673, in load_face
+    raise Exception("Could not find font {0!r}.".format(orig_fn))
+Exception: Could not find font 'gui/font/FiraCode-Regular.ttf'.
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.2.3.24061702
 code tyan 1.0
-Wed Apr 16 20:21:34 2025
+Fri Apr 18 21:19:36 2025

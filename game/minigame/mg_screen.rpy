@@ -11,7 +11,7 @@
 # 
 init -10 python:
     def get_feather_icon(s):
-        return "images/feather icons" + s + ".png"
+        return "path/to/feather/icons/" + s + ".png"
 init python:
 
     def transfer_lists(from_list, to_list):
@@ -29,7 +29,7 @@ init python:
                 index = list_index
         return index
 
-screen code_minigame_puzzle(title="idk", pieces=[], objs=[], template="%v"):
+screen code_minigame_puzzle(title="", pieces=[], objs=[], template="%v"):
     zorder 10
     modal True
     style_prefix "code_it"
@@ -38,7 +38,7 @@ screen code_minigame_puzzle(title="idk", pieces=[], objs=[], template="%v"):
     default game_title = title.title()
     default vars = []
     
-    #add "phone_background.png" #AS_DESKTOP_IMG
+    add AS_DESKTOP_IMG
     #add "gui/overlay/code_it.png"
 
     frame:
@@ -81,9 +81,9 @@ screen code_minigame_puzzle(title="idk", pieces=[], objs=[], template="%v"):
                         viewport:
                             mousewheel True
                             scrollbars "vertical"
-                            #style_prefix "ASInterfaceScrollbar"
-                            #xmaximum 1280 / 2
-                            xsize 1280 / 2
+                            style_prefix "ASInterfaceScrollbar"
+                            xmaximum 1280 / 2
+                            #xsize 1280 / 2
                             
                             hbox:
                                 style_prefix "code_it_script_template"
@@ -140,7 +140,7 @@ style code_it_vbox is vbox:
     spacing 8
 
 style code_it_title is gui_text:
-    font "fonts/Inter-Italic-VariableFont_opsz,wght.ttf"
+    font AS_FONTS_DIR + "Bold.ttf"
     xalign 0.15
     size 20
 
@@ -154,17 +154,17 @@ style code_it_panel is code_it_vbox:
 style code_it_script_vbox is code_it_vbox
 
 style code_it_script_text is gui_text:
-    font "fonts/Inter-Italic-VariableFont_opsz,wght.ttf"
+    font "gui/font/FiraCode-Regular.ttf"
     size 16
 
 style code_it_script_comment is code_it_script_text:
     color "#888888"
 
-style code_it_button_option:
+style code_it_button_option is ASInterfacePushButton:
     padding (12, 2)
 
-style code_it_button_option_text:
-    font "fonts/Inter-Italic-VariableFont_opsz,wght.ttf"
+style code_it_button_option_text is ASInterfacePushButton_text:
+    font "gui/font/FiraCode-Regular.ttf"
     size 14
 
 style code_it_script_template_vbox is code_it_vbox
