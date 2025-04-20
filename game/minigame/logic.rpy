@@ -11,124 +11,111 @@
 # 
 
 init 10 python:
-    from random import shuffle
-    import ast as py_ast
+    from random import shuffle  # Импортируем функцию shuffle для перемешивания списков
+    import ast as py_ast  # Импортируем модуль ast для работы с абстрактным синтаксическим деревом
 
     class CodeItPuzzleLexer():
-        """A small lexer to parse Python code by looking for a token
-        to mark as as variable.
+        """Маленький лексер для разбора Python кода, ищущий токен
+        для обозначения переменной.
         """
 
-        var_token = "%v"
+        var_token = "%v"  # Токен для переменной
 
         def get_tokens(self, code=""):
-            """Get the list of "tokens" by parsing through the code.
+            """Получает список "токенов", разбирая код.
 
             Args:
-                code: The string to parse through.
+                code: Строка для разбора.
             """
 
-            # Create setup variables to create the list of tokens
+            # Создаем переменные для создания списка токенов
             objs = []
-            split_c = code.split("\n")
+            split_c = code.split("\n")  # Разделяем код на строки
 
-            # Iterate through every item in the list we made earlier
+            # Итерируем по каждой строке
             for item in split_c:
                 
-                # If the token is found, we must iterate through that
-                # line.
+                # Если токен найден, начинаем разбор этой строки
                 if self.var_token in item:
 
-                    # We create a small lexeme and a flag to see if we
-                    # are parsing the token currently.
+                    # Создаем небольшой лексем и флаг для отслеживания токена
                     cobj = ""
                     itoken = False
 
-                    # Iterate through every character and index in the
-                    # line.
+                    # Итерируем по каждому символу и индексу в строке
                     for i, char in enumerate(item):
                         
-                        # Add the character to the current lexeme.
+                        # Добавляем символ к текущей лексеме
                         cobj += char
 
-                        # If the current character is the start of the
-                        # token, start the token loop.
+                        # Если текущий символ - начало токена, начинаем цикл токена
                         if char == self.var_token[0]:
                             itoken = True
 
-                        # Look for the next character if possible.
+                        # Проверяем следующий символ, если это возможно
                         if i + 1 < len(item):
 
-                            # If we are parsing a token, check that the
-                            # lexeme is the complete token, add the token,
-                            # then exit the loop.
+                            # Если мы разбираем токен, проверяем, что лексема завершена
                             if itoken:
                                 if cobj == self.var_token:
-                                    objs.append(self.var_token)
+                                    objs.append(self.var_token)  # Добавляем токен в список
                                     cobj = ""
                                     itoken = False
                             
-                            # If we aren't parsing the token, check that
-                            # the next character is the beginning of the
-                            # token and add the current lexeme to the
-                            # current list before resetting it.
+                            # Если не разбираем токен, проверяем, что следующий символ - начало токена
                             else:
                                 if item[i + 1] == self.var_token[0]:
-                                    objs.append(cobj)
+                                    objs.append(cobj)  # Добавляем текущую лексему в список
                                     cobj = ""
                                     itoken = True
                         
-                        # If we're at the end of the line, we can just add
-                        # the completed lexeme.
+                        # Если мы в конце строки, добавляем завершенную лексему
                         else:
                             objs.append(cobj)
                 
-                # Otherwise, we can just add it since it's real code
-                # anyway.
+                # В противном случае просто добавляем строку
                 else:
                     objs.append(item)
                 
-                # Add the newline token to indicate a new line in the
-                # script.
+                # Добавляем токен новой строки
                 objs.append("newline")
             return objs
 
         def __init__(self, delimiter=""):
-            """Construct the Lexer.
+            """Конструктор лексера.
 
             Args:
-                delimiter: The token to mark as a missing variable.
+                delimiter: Токен для обозначения отсутствующей переменной.
             """
             self.var_token = delimiter
 
 
     class CodeItPuzzle():
-        """The base class for a CodeIt puzzle.
+        """Базовый класс для головоломки CodeIt.
         """
 
-        delimiter = "%v"
-        bits = []
-        code_string = "print %v"
-        code_objects = []
+        delimiter = "%v"  # Токен для переменной
+        bits = []  # Список частей кода
+        code_string = "print %v"  # Строка кода по умолчанию
+        code_objects = []  # Объекты кода
 
         def check(self, solution=[]):
-            """Check whether the solution will make a valid AST
-            and will compile correctly.
+            """Проверяет, будет ли решение корректным AST
+            и будет ли оно компилироваться правильно.
 
             Args:
-                solution: The list of missing vars in order of the
-                puzzle code.
+                solution: Список отсутствующих переменных в порядке кода головоломки.
             """
-            code, _ = self._insert_bits(bits=solution)
+            code, _ = self._insert_bits(bits=solution)  # Вставляем части кода
             error = None
             passed = True
             
-            # If we didn't pass the AST test, exit now.
+            # Если не прошли тест AST, выходим
             if not self._verify_ast(code):
                 passed = False
                 error = "syntax"
 
-            # If we didn't pass the compile test, exit now.
+            # Если не прошли тест компиляции, выходим
             if not self._verify_compile(code):
                 passed = False
                 error = "compile"
@@ -137,41 +124,39 @@ init 10 python:
 
 
         def _insert_bits(self, bits=None, assign=False):
-            """Insert the list of bits into the code.
+            """Вставляет список частей в код.
 
             Args:
-                bits: The list of bits to insert
-                assign: Whether to re-assign the code objects
-                and strings in this object to the results.
+                bits: Список частей для вставки
+                assign: Нужно ли переназначить объекты кода
+                и строки в этом объекте на результаты.
             """
 
-            # Create setup variables to insert the correct pieces
-            # of code.
+            # Создаем переменные для вставки правильных частей кода
             b = bits if bits is not None else self.bits
             new_code_obj = self.code_objects.copy()
             new_code_string = self.code_string
             bit_index = 0
             
-            # Iterage through every code object in the list.
+            # Итерируем по каждому объекту кода в списке
             for index, object in enumerate(new_code_obj):
 
-                # If the object is our variable token, swap it out
-                # with the first bit in the list.
+                # Если объект - наш токен переменной, заменяем его
+                # на первую часть из списка.
                 if self.delimiter in object:
                     new_code_obj[index] = object.replace(self.delimiter, bits[bit_index])
                     bit_index += 1
 
-                # If the object is a new line, replace it with
-                # the newline escape character.
+                # Если объект - новая строка, заменяем его на
+                # символ новой строки.
                 elif object == "newline":
                     new_code_obj[index] = "\n"
             
-            # Compile a new string by concatenating the code object
-            # list.
+            # Компилируем новую строку, объединяя список объектов кода
             new_code_string = ''.join(new_code_obj)
             
-            # If we assign it, set the attributes in this object to
-            # the 'compiled' values.
+            # Если мы переназначаем, устанавливаем атрибуты в этом объекте на
+            # "собранные" значения.
             if assign:
                 self.code_objects = new_code_obj
                 self.code_string = new_code_string
@@ -180,16 +165,16 @@ init 10 python:
 
 
         def _verify_ast(self, code=None):
-            """Verify whether the solution will evaluate to a proper
-            Python abstract syntax tree.
+            """Проверяет, будет ли решение оцениваться как правильное
+            абстрактное синтаксическое дерево.
 
             Args:
-                code: The code to verify
+                code: Код для проверки
             """
             passed_ast = False
             code_str = code if code is not None else self.code_string
             try:
-                py_ast.parse(code_str)
+                py_ast.parse(code_str)  # Проверяем синтаксис
                 passed_ast = True
             except SyntaxError:
                 pass
@@ -197,16 +182,16 @@ init 10 python:
             return passed_ast
 
         def _verify_compile(self, code=None):
-            """Verify whether the solution will compile properly.
+            """Проверяет, будет ли решение компилироваться правильно.
 
             Args:
-                code: The code to verify
+                code: Код для проверки
             """
             passed_compile = False
             code_str = code if code is not None else self.code_string
 
             try:
-                c_compiled = compile(code_str, '<string>', mode='exec')
+                c_compiled = compile(code_str, '<string>', mode='exec')  # Компилируем код
                 passed_compile = True
             except SyntaxError:
                 pass
@@ -214,47 +199,55 @@ init 10 python:
             return passed_compile
 
         def _compile(self, code=None):
-            """Compile the code into a code object for execution.
+            """Компилирует код в объект кода для выполнения.
 
             Args:
-                code: The code to compile.
+                code: Код для компиляции.
             """
             code_str = code if code is not None else self.code_string
 
-            print code_str
+            print(code_str)  # Выводим код для отладки
 
             return compile(code_str, '<string>', mode="exec")
 
 
-        def __init__(self, File=None, code="", bits=[], delimit="%v"):
-            """Construct the CodeItPuzzle.
+        def __init__(self, file=None, code="", bits=[], delimit="%v"):
+            """Конструктор CodeItPuzzle.
 
             Args:
-                file: The path to a Python file with a delimiter.
-                code: The string of code to use, if a file is not present.
-                bits: The list of bits to insert into the code.
-                delimit: The delimiter to mark as a missing variable.
+                file: Путь к Python файлу с разделителем.
+                code: Строка кода для использования, если файл не указан.
+                bits: Список частей для вставки в код.
+                delimit: Разделитель для обозначения отсутствующей переменной.
             """
             self.delimiter = delimit
             self.lexer = CodeItPuzzleLexer(delimiter=self.delimiter)
             self.bits = bits
 
-            if File is not None:
-                with renpy.file(File) as fobj:
-                    self.code_string = ''.join(fobj.readlines())
+            if file is not None:
+                with renpy.file(file) as fobj:
+                    # Читаем код из файла и декодируем байты в строки
+                    self.code_string = ''.join(line.decode('utf-8') for line in fobj.readlines())
             else:
                 self.code_string = code
 
-            self.code_objects = self.lexer.get_tokens(code=self.code_string)
+            self.code_objects = self.lexer.get_tokens(code=self.code_string)  # Получаем токены
 
     class CodeIt():
+        """Класс для управления головоломками CodeIt."""
 
         puzzles = {
             "intro": ("puzzles/intro.py", ["print"]),
-            "compile": ("puzzles/compile.py", [])
+            #"compile": ("puzzles/compile.py", []),
+            "oof": ("puzzles/oof.py", ["oof", "def", "return", "reverse"])
         }
 
         def run_puzzle(self, puzzle=""):
+            """Запускает головоломку по имени.
+
+            Args:
+                puzzle: Имя головоломки для запуска.
+            """
             complete = False
             puzzle_loc, puzzle_solv = self.puzzles.get(puzzle, None)
             nocomment = lambda p: "# " not in p
@@ -262,47 +255,83 @@ init 10 python:
             if not puzzle:
                 return
             
-            full_puzzle_loc = "core/minigame/" + puzzle_loc
+            full_puzzle_loc = "minigame/" + puzzle_loc
 
             if not renpy.loadable(full_puzzle_loc):
                 print("Err: File %s is missing from the puzzles folder." % (full_puzzle_loc))
                 return
 
             pieces = puzzle_solv.copy()
-            shuffle(pieces)
+            shuffle(pieces)  # Перемешиваем части головоломки
 
-            puzzle_obj = CodeItPuzzle(File=full_puzzle_loc, bits=pieces, delimit="%v")
+            puzzle_obj = CodeItPuzzle(file=full_puzzle_loc, bits=pieces, delimit="%v")
 
             while not complete:
-                submission = renpy.call_screen("code_minigame_puzzle", 
-                                               title=puzzle,
-                                               pieces=pieces,
-                                               objs=puzzle_obj.code_objects,
-                                               template=puzzle_obj.delimiter)
+                submission = renpy.call_screen("code_minigame_puzzle", title=puzzle, pieces=pieces, objs=puzzle_obj.code_objects, template=puzzle_obj.delimiter)
 
-                did_succeed, error = puzzle_obj.check(submission)
+                did_succeed, error = puzzle_obj.check(submission)  # Проверяем решение
 
                 if did_succeed:
                     complete = True
+                    # Вызываем экран успешного завершения головоломки
+                    renpy.call_screen("ASSuccessAlert", message="Поздравляем!", withDetails="Вы успешно завершили головоломку!")
                     return
 
                 if not did_succeed and error is not None:
-                    renpy.call_screen("ASNotificationAlert",
-                                      message="Puzzle Script Failed",
-                                      withDetails = "The script for this puzzle failed due to a %s error. Please check the order of the code pieces and verify that the code works before submitting." % (error))
+                    renpy.call_screen("ASNotificationAlert", message="Ошибка в скрипте головоломки", withDetails="Скрипт для этой головоломки не сработал из-за ошибки %s. Пожалуйста, проверьте порядок следования фрагментов кода и убедитесь, что код работает, перед отправкой." % (error))
                     pieces = puzzle_solv.copy()
-                    shuffle(pieces)
-            
+                    shuffle(pieces)  # Перемешиваем части головоломки заново
 
-    minigame = CodeIt()
+                    
+                    
+                    
+    minigame = CodeIt()  # Создаем экземпляр головоломки
+
+screen ASSuccessAlert(message="", withDetails=""):
+    modal True
+    fixed xysize (1920, 1080):
+        vbox:
+            anchor (0.5,0.5)
+            pos (0.5,0.5)
+            vbox:
+                xysize (900, 300)
+                text "[message]"  align (0.5, 0.5) # Сообщение об успешном завершении
+                text "[withDetails]" align (0.5, 0.5) # Дополнительные детали
+
+            hbox:
+                xysize (700, 300)
+                anchor (0.5,0.5)
+                pos (0.5,0.5)
+                textbutton "Завершить игру" action [Return()]:  # Завершение игры
+                    pos (0.5,0.5)
+                    anchor (0.5,0.5)
+                textbutton "Пройти заново" action [Jump("call_minigame"), SetVariable(puzzle,"intro")]:  # Повторное прохождение головоломки
+                    pos (0.5,0.5)
+                    anchor (0.5,0.5)
 
 image effect black = "#000000"
 
-label call_minigame(puzzle="intro"):
+label call_minigame:
+    """Вызывает головоломку с указанным именем."""
     $ quick_menu = False
     window hide
     show effect black with fade
-    $ minigame.run_puzzle(puzzle=puzzle)
+    
+    $ minigame.run_puzzle(puzzle=puzzle)  # Запускаем головоломку
     hide effect black with dissolve
     window show
     return
+
+# Пример использования:
+# label start:
+    # "Поиграем в головоломки"
+    # menu:
+        # "Первая головоломка intro.py":
+            # $ puzzle="intro"
+            # jump call_minigame
+        # "Вторая головоломка oof.py":
+            # $ puzzle="oof"
+            # jump call_minigame
+    # return
+    
+    

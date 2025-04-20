@@ -1,17 +1,17 @@
 # intro.py
-# A small intro to the CodeIt game.
-# 
-# Welcome to CodeIt! This minigame is designed as a puzzle
-# to determine where the statements on the right go.
-# 
-# To insert a statement on the right, click on it, and it will
-# insert at the first empty gray space.
-# 
-# To remove a statement from here, click on the statement, 
-# but be careful: The statements may shift!
-# 
-# Be sure to read comments in the file; they may help you 
-# figure out the correct order!
+# Небольшое введение в игру CodeIt.
+#
+# Добро пожаловать в CodeIt! Эта мини-игра разработана как головоломка,
+# чтобы определить, куда должны быть вставлены утверждения справа.
+#
+# Чтобы вставить утверждение справа, нажмите на него, и оно
+# будет вставлено в первое пустое серое пространство.
+#
+# Чтобы удалить утверждение отсюда, нажмите на утверждение,
+# но будьте осторожны: утверждения могут сдвинуться!
+#
+# Обязательно прочитайте комментарии в файле; они могут помочь вам
+# выяснить правильный порядок!
 
-# Puts "Hello, world!" to the terminal.
-%v "Hello, world!"
+# Выводит "Hello, world!" в терминал.
+%v("Hello, world!")

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/minigame/mg_screen.rpy", line 84: keyword argument 'xsize' is incompatible with 'xmaximum'.
-    xsize 1280 / 2
-         ^
+File "game/script.rpy", line 57: expected statement.
+    №jump call_minigame
+                       ^
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Fri Apr 18 21:02:29 2025
+Sat Apr 19 20:32:44 2025

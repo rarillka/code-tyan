@@ -1,25 +1,27 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While loading <renpy.display.im.Image object ('path/to/feather/icons/check-square.png') at 0x00000000054b4a60>:
-  File "game/script.rpy", line 58, in script
-    call screen code_minigame_puzzle(title="i", pieces=[1, 1], objs=[], template="%v")
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
+While running game code:
+  File "game/minigame/logic.rpy", line 320, in script
+    $ minigame.run_puzzle(puzzle=puzzle)  # Запускаем головоломку
+  File "game/minigame/logic.rpy", line 320, in <module>
+    $ minigame.run_puzzle(puzzle=puzzle)  # Запускаем головоломку
+  File "game/minigame/logic.rpy", line 270, in run_puzzle
+    submission = renpy.call_screen("code_minigame_puzzle", title=puzzle, pieces=pieces, objs=puzzle_obj.code_objects, template=puzzle_obj.delimiter)
 Exception: Could not find font 'gui/font/FiraCode-Regular.ttf'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 58, in script
-    call screen code_minigame_puzzle(title="i", pieces=[1, 1], objs=[], template="%v")
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 1971, in execute
-    self.call("execute")
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 1953, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\statements.py", line 349, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "game/minigame/logic.rpy", line 320, in script
+    $ minigame.run_puzzle(puzzle=puzzle)  # Запускаем головоломку
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 823, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\python.py", line 1178, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/minigame/logic.rpy", line 320, in <module>
+    $ minigame.run_puzzle(puzzle=puzzle)  # Запускаем головоломку
+  File "game/minigame/logic.rpy", line 270, in run_puzzle
+    submission = renpy.call_screen("code_minigame_puzzle", title=puzzle, pieces=pieces, objs=puzzle_obj.code_objects, template=puzzle_obj.delimiter)
   File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\exports.py", line 3420, in call_screen
     rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
   File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ui.py", line 301, in interact
@@ -72,14 +74,18 @@ Full traceback:
     surf = render(d, width - x, rh, cst, cat)
   File "render.pyx", line 170, in renpy.display.render.render
   File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 1076, in render
-    surf = render(d, rw, height - y, cst, cat)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 1878, in render
+    cwidth, cheight = sizeit('c', width, height, 0, 0)
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 1875, in sizeit
+    rend = renpy.display.render.render_for_size(pos_d[pos], width, height, st, at)
+  File "render.pyx", line 312, in renpy.display.render.render_for_size
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\viewport.py", line 285, in render
+    surf = renpy.display.render.render(self.child, child_width, child_height, st, at)
   File "render.pyx", line 170, in renpy.display.render.render
   File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\behavior.py", line 968, in render
-    rv = super(Button, self).render(width, height, st, at)
-  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 1361, in render
-    surf = render(child,
+  File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\display\layout.py", line 1076, in render
+    surf = render(d, rw, height - y, cst, cat)
   File "render.pyx", line 170, in renpy.display.render.render
   File "render.pyx", line 260, in renpy.display.render.render
   File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\text\text.py", line 2276, in render
@@ -97,4 +103,4 @@ Exception: Could not find font 'gui/font/FiraCode-Regular.ttf'.
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.2.3.24061702
 code tyan 1.0
-Fri Apr 18 21:19:36 2025
+Sun Apr 20 10:44:21 2025

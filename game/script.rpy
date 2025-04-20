@@ -54,8 +54,8 @@ define k = Character("KI11K4", color="#b3ffb3")
 
 # Игра начинается здесь:
 label start:
+    #$ puzzle="intro"
     #jump call_minigame
-    call screen code_minigame_puzzle
     python:
         _preferences.set_volume('music', 0.2)
         

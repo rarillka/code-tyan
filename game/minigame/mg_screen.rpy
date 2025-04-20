@@ -9,10 +9,14 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 # 
+# Определение директории шрифтов
+define AS_FONTS_DIR = "fonts/"  # Укажите правильный путь к директории шрифтов
+
 init -10 python:
     def get_feather_icon(s):
-        return "path/to/feather/icons/" + s + ".png"
+        return "feather/" + s + ".png"
 init python:
+    
 
     def transfer_lists(from_list, to_list):
         for item in from_list:
@@ -39,7 +43,7 @@ screen code_minigame_puzzle(title="", pieces=[], objs=[], template="%v"):
     default vars = []
     
     add AS_DESKTOP_IMG
-    #add "gui/overlay/code_it.png"
+    add "gui/overlay/code_it.png"
 
     frame:
         
@@ -60,13 +64,13 @@ screen code_minigame_puzzle(title="", pieces=[], objs=[], template="%v"):
 
                     button action Function(transfer_lists, from_list=submission, to_list=pieces):
                         add get_feather_icon("refresh-cw"):
-                            size (28, 28)
+                            size (32, 32)
                     
                     button action [SensitiveIf(len(pieces) == 0), Return(submission)]:
                         add get_feather_icon("check-square"):
-                            size (28, 28)
+                            size (32, 32)
                             if len(pieces) != 0:
-                                alpha 0.2
+                                alpha 0.3
 
             null height 24
 
@@ -82,8 +86,8 @@ screen code_minigame_puzzle(title="", pieces=[], objs=[], template="%v"):
                             mousewheel True
                             scrollbars "vertical"
                             style_prefix "ASInterfaceScrollbar"
-                            xmaximum 1280 / 2
-                            #xsize 1280 / 2
+                            xmaximum (1280 / 2)
+                            #xsize (1280 / 2)
                             
                             hbox:
                                 style_prefix "code_it_script_template"
@@ -102,11 +106,11 @@ screen code_minigame_puzzle(title="", pieces=[], objs=[], template="%v"):
                                         else:
                                             frame:
                                                 has hbox:
-                                                    null height 16
-                                                    null width 96
+                                                    null height 18
+                                                    null width 98
 
                                     elif obj == "newline":
-                                        null width 1280 / 2
+                                        null width (1280 / 2)
 
                                     elif obj.startswith("# "):
                                         text "[obj]" style "code_it_script_comment"
@@ -140,12 +144,12 @@ style code_it_vbox is vbox:
     spacing 8
 
 style code_it_title is gui_text:
-    font AS_FONTS_DIR + "Bold.ttf"
+    font AS_FONTS_DIR + "Belozersk Font.ttf"
     xalign 0.15
-    size 20
+    size 24
 
 style code_it_text is gui_text:
-    size 18
+    size 20
 
 style code_it_panel is code_it_vbox:
     xsize 640
@@ -155,7 +159,7 @@ style code_it_script_vbox is code_it_vbox
 
 style code_it_script_text is gui_text:
     font "gui/font/FiraCode-Regular.ttf"
-    size 16
+    size 20
 
 style code_it_script_comment is code_it_script_text:
     color "#888888"
@@ -165,7 +169,7 @@ style code_it_button_option is ASInterfacePushButton:
 
 style code_it_button_option_text is ASInterfacePushButton_text:
     font "gui/font/FiraCode-Regular.ttf"
-    size 14
+    size 18
 
 style code_it_script_template_vbox is code_it_vbox
 
@@ -180,3 +184,10 @@ style code_it_script_template_text is code_it_script_text
 style code_it_script_template_button_text is code_it_script_text:
     idle_color gui.accent_color
     hover_color "#fb2046"
+
+# Определение стиля для кнопок интерфейса
+style ASInterfacePushButton is gui_button:
+    padding (12, 2)
+    background "#cccccc"  # Установите цвет фона
+    idle_color "#ffffff"  # Цвет текста в неактивном состоянии
+    hover_color "#e0e0e0"  # Цвет текста при наведении
