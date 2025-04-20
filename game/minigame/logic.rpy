@@ -288,7 +288,7 @@ init 10 python:
     minigame = CodeIt()  # Создаем экземпляр головоломки
 
 screen ASSuccessAlert(message="", withDetails=""):
-    modal True
+    #modal True
     fixed xysize (1920, 1080):
         vbox:
             anchor (0.5,0.5)
@@ -302,7 +302,7 @@ screen ASSuccessAlert(message="", withDetails=""):
                 xysize (700, 300)
                 anchor (0.5,0.5)
                 pos (0.5,0.5)
-                textbutton "Завершить игру" action [Return()]:  # Завершение игры
+                textbutton "Завершить игру" action [Return("start")]:  # Завершение игры
                     pos (0.5,0.5)
                     anchor (0.5,0.5)
                 textbutton "Пройти заново" action [Jump("call_minigame"), SetVariable(puzzle,"intro")]:  # Повторное прохождение головоломки
@@ -312,7 +312,7 @@ screen ASSuccessAlert(message="", withDetails=""):
 image effect black = "#000000"
 
 label call_minigame:
-    """Вызывает головоломку с указанным именем."""
+    #"""Вызывает головоломку с указанным именем."""
     $ quick_menu = False
     window hide
     show effect black with fade
