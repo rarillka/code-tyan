@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 57: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    $ quick_menu = False
-    ^
+File "game/script.rpy", line 224: expected statement.
+    Hide effect black with fade
+                      ^
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Sun Apr 20 21:06:07 2025
+Thu Apr 24 23:05:18 2025

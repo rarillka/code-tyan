@@ -238,7 +238,8 @@ init 10 python:
 
         puzzles = {
             "intro": ("puzzles/intro.py", ["print"]),
-            #"compile": ("puzzles/compile.py", []),
+            "input": ("puzzles/input.py", ["input","int_obj", "int", "print", "input"]),
+            "math expr": ("puzzles/math expressions.py", ["input", "int","*", "input", "print", "int",]),
             "oof": ("puzzles/oof.py", ["oof", "def", "return", "reverse"])
         }
 
@@ -274,7 +275,7 @@ init 10 python:
                 if did_succeed:
                     complete = True
                     # Вызываем экран успешного завершения головоломки
-                    renpy.call_screen("ASSuccessAlert", message="Поздравляем!", withDetails="Вы успешно завершили головоломку!")
+                    #renpy.call_screen("ASSuccessAlert", message="Поздравляем!", withDetails="Вы успешно завершили головоломку!")
                     return
 
                 if not did_succeed and error is not None:

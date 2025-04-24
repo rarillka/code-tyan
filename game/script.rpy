@@ -53,13 +53,7 @@ define k = Character("KI11K4", color="#b3ffb3")
 # а eileen happy — "eileen happy.webp", и тогда они появятся в игре.
 # Игра начинается здесь:
 label start:
-    $ puzzle="intro"
-    $ quick_menu = False
-    window hide
-    show effect black with fade
-    
-    $ minigame.run_puzzle(puzzle=puzzle)  # Запускаем головоломку
-    hide effect black with dissolve
+
     #jump idka
     python:
         _preferences.set_volume('music', 0.2)
@@ -216,6 +210,20 @@ label start:
     "И опять все на мне..."
     $ renpy.notify('Нажите на иконку "HubGit, чтобы скачать файл  (иконка будет добавлена позже)"')
     "Ладно, пора за работу"
+    k "между этой сценой и открытием мини игры должна быть еще одна сцена но мы её добавим попозжэээ"
+    #$ quick_menu = False
+    window hide
+    show effect black with fade
+    $ puzzle = "intro"
+    $ minigame.run_puzzle(puzzle=puzzle)  # Запускаем головоломку
+    
+    $ puzzle = "input"
+    $ minigame.run_puzzle(puzzle=puzzle)
+
+
+    $ puzzle = "math expr"
+    $ minigame.run_puzzle(puzzle=puzzle)
+
     call screen workingscreen
 
     return

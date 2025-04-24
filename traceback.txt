@@ -1,26 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/minigame/logic.rpy", line 321, in script
-    $ minigame.run_puzzle(puzzle=puzzle)  # Запускаем головоломку
-  File "game/minigame/logic.rpy", line 321, in <module>
-    $ minigame.run_puzzle(puzzle=puzzle)  # Запускаем головоломку
-NameError: name 'puzzle' is not defined
+  File "game/script.rpy", line 221, in script
+    $ minigame.run_puzzle(puzzle=puzzle)
+  File "game/script.rpy", line 221, in <module>
+    $ minigame.run_puzzle(puzzle=puzzle)
+  File "game/minigame/logic.rpy", line 252, in run_puzzle
+    puzzle_loc, puzzle_solv = self.puzzles.get(puzzle, None)
+TypeError: cannot unpack non-iterable NoneType object
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/minigame/logic.rpy", line 321, in script
-    $ minigame.run_puzzle(puzzle=puzzle)  # Запускаем головоломку
+  File "game/script.rpy", line 221, in script
+    $ minigame.run_puzzle(puzzle=puzzle)
   File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 823, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "C:\Users\Мария\Downloads\renpy-8.2.3-sdk\renpy\python.py", line 1178, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/minigame/logic.rpy", line 321, in <module>
-    $ minigame.run_puzzle(puzzle=puzzle)  # Запускаем головоломку
-NameError: name 'puzzle' is not defined
+  File "game/script.rpy", line 221, in <module>
+    $ minigame.run_puzzle(puzzle=puzzle)
+  File "game/minigame/logic.rpy", line 252, in run_puzzle
+    puzzle_loc, puzzle_solv = self.puzzles.get(puzzle, None)
+TypeError: cannot unpack non-iterable NoneType object
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.2.3.24061702
 code tyan 1.0
-Sun Apr 20 21:02:47 2025
+Thu Apr 24 22:52:45 2025
